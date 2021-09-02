@@ -1,23 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hello World</title>
-    <url>/2021/09/01/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<span id="more"></span>
-
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+    <title></title>
+    <url>/2021/09/02/%E5%9B%BE%E7%89%87/</url>
+    <content><![CDATA[<p><img src="https://github.com/bigwoodpecker/img/img/image-20210902221201704.png" alt="image-20210902221201704"></p>
 ]]></content>
   </entry>
   <entry>
@@ -74,7 +60,7 @@
 <li><p><a href="http://mashirosorata.vicp.io/HEXO-NEXT%E4%B8%BB%E9%A2%98%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE.html">HEXO+NEXT主题个性化配置|SORA</a></p>
 </li>
 </ul>
-<p>在NexT主题的Mist外观下，侧边栏默认在右，而打开主题配置文件<code>_config.yml</code>查看，只有在<code>Pisces</code>，<code>Gemini</code>这两种外观下才可以通过<code>_config.yml</code>直接修改选择左侧或是右侧。而本人习惯把音乐播放器以及输入法放置于桌面右下角，故侧边栏在右并不方便 。于是在寻找了一些教程后 ，做出了修改，并做此记录和分享。</p>
+<p>在NexT主题的Mist外观下，侧边栏默认在右，而只有在<code>Pisces</code>，<code>Gemini</code>这两种外观下才可以通过<code>_config.yml</code>直接修改选择左侧或是右侧。</p>
 <p>在此过程中需要修改如下几个文件：</p>
 <ul>
 <li>sidebar.styl</li>
@@ -82,21 +68,20 @@
 <li>back-to-top.styl</li>
 <li>motion.js</li>
 </ul>
-<p>2019.3.25 更新 增加bug修正部分</p>
 <h2 id="sidebar-styl"><a href="#sidebar-styl" class="headerlink" title="sidebar.styl"></a>sidebar.styl</h2><p>路径：<code>.\themes\next\source\css\_common\components\sidebar\</code><br>将此文件的第3行<code>right</code>改为<code>left</code></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">.sidebar &#123;</span><br><span class="line">  position: fixed;</span><br><span class="line">  left: 0;</span><br><span class="line">  top: 0;</span><br><span class="line">  bottom: 0;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.sidebar</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: fixed;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">bottom</span>: <span class="number">0</span>;</span><br></pre></td></tr></table></figure>
 
 <h2 id="sidebar-toggle-styl"><a href="#sidebar-toggle-styl" class="headerlink" title="sidebar-toggle.styl"></a>sidebar-toggle.styl</h2><p>路径：<code>.\themes\next\source\css\_common\components\sidebar\</code><br>同样将第3行冒号前的<code>right</code>改为<code>left</code></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">left: $b2t-position-right;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="attribute">left</span>: $b2t-position-right;</span><br></pre></td></tr></table></figure>
 
 <h2 id="back-to-top-styl"><a href="#back-to-top-styl" class="headerlink" title="back-to-top.styl"></a>back-to-top.styl</h2><p>路径：<code>.\themes\next\source\css\_common\components\</code><br>将第5行冒号前的<code>right</code>改为<code>left</code></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">left: $b2t-position-right;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="attribute">left</span>: $b2t-position-right;</span><br></pre></td></tr></table></figure>
 
 <h2 id="motion-js"><a href="#motion-js" class="headerlink" title="motion.js"></a>motion.js</h2><p>路径：<code>.\themes\next\source\js\src\motion.js</code><br>利用搜索功能找到改文档中的<code>paddingRight</code>字段，将<code>paddingRight</code>改为<code>paddingLeft</code>(共两处)。</p>
 <h2 id="重新部署"><a href="#重新部署" class="headerlink" title="重新部署"></a>重新部署</h2><p>重新部署即可完成侧边栏在左的设置。</p>
-<h1 id="修正缩小窗口时的bug"><a href="#修正缩小窗口时的bug" class="headerlink" title="修正缩小窗口时的bug"></a>修正缩小窗口时的bug</h1><p>自己没注意过这个问题，感谢评论区Jode_He指出和分享。仅使用上面的方案情况下，如果侧边栏的设置是展开状态，在浏览器窗口缩小时会导致侧边栏仍然存在且占据相当大的位置。做以下调整。</p>
+<h2 id="修正缩小窗口时的bug"><a href="#修正缩小窗口时的bug" class="headerlink" title="修正缩小窗口时的bug"></a>修正缩小窗口时的bug</h2><p>仅使用上面的方案情况下，如果侧边栏的设置是展开状态，在浏览器窗口缩小时会导致侧边栏仍然存在且占据相当大的位置。做以下调整。</p>
 <p>找到<code>./themes/source/js/src/motion.js</code>文件，在<code>$(document).ready(function ()&#123;&#125;)</code>内添加内容：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$(document).ready(function () &#123;</span><br><span class="line"></span><br><span class="line">	window.onload=function()&#123;</span><br><span class="line">	    var bwol=document.body.offsetWidth;</span><br><span class="line">	    if(bwol &lt; 975)&#123;</span><br><span class="line">		$(&#x27;aside#sidebar&#x27;).css(&quot;display&quot;,&quot;none&quot;);</span><br><span class="line">		$(&#x27;body&#x27;).css(&quot;paddingLeft&quot;,&quot;0px&quot;);</span><br><span class="line">	    &#125;</span><br><span class="line">	&#125;</span><br><span class="line">	window.onresize = function()&#123;</span><br><span class="line">	    var bwos=document.body.offsetWidth;</span><br><span class="line">	    bwos &lt; 975 &amp;&amp; $(&#x27;body&#x27;).velocity(&#x27;stop&#x27;).velocity(&#123;paddingLeft: 0&#125;,0);</span><br><span class="line">	    if($(&#x27;aside#sidebar&#x27;).css(&#x27;display&#x27;) != &#x27;none&#x27; &amp;&amp; $(&#x27;aside#sidebar&#x27;).css(&#x27;width&#x27;)!=&#x27;0px&#x27;)</span><br><span class="line">		$(&#x27;body&#x27;).velocity(&#x27;stop&#x27;).velocity(&#123;paddingLeft: 350&#125;,0);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	   NexT.motion = &#123;&#125;;</span><br><span class="line">	   </span><br><span class="line">	   ...</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">window</span>.onload=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	    <span class="keyword">var</span> bwol=<span class="built_in">document</span>.body.offsetWidth;</span><br><span class="line">	    <span class="keyword">if</span>(bwol &lt; <span class="number">975</span>)&#123;</span><br><span class="line">		$(<span class="string">&#x27;aside#sidebar&#x27;</span>).css(<span class="string">&quot;display&quot;</span>,<span class="string">&quot;none&quot;</span>);</span><br><span class="line">		$(<span class="string">&#x27;body&#x27;</span>).css(<span class="string">&quot;paddingLeft&quot;</span>,<span class="string">&quot;0px&quot;</span>);</span><br><span class="line">	    &#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">window</span>.onresize = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	    <span class="keyword">var</span> bwos=<span class="built_in">document</span>.body.offsetWidth;</span><br><span class="line">	    bwos &lt; <span class="number">975</span> &amp;&amp; $(<span class="string">&#x27;body&#x27;</span>).velocity(<span class="string">&#x27;stop&#x27;</span>).velocity(&#123;<span class="attr">paddingLeft</span>: <span class="number">0</span>&#125;,<span class="number">0</span>);</span><br><span class="line">	    <span class="keyword">if</span>($(<span class="string">&#x27;aside#sidebar&#x27;</span>).css(<span class="string">&#x27;display&#x27;</span>) != <span class="string">&#x27;none&#x27;</span> &amp;&amp; $(<span class="string">&#x27;aside#sidebar&#x27;</span>).css(<span class="string">&#x27;width&#x27;</span>)!=<span class="string">&#x27;0px&#x27;</span>)</span><br><span class="line">		$(<span class="string">&#x27;body&#x27;</span>).velocity(<span class="string">&#x27;stop&#x27;</span>).velocity(&#123;<span class="attr">paddingLeft</span>: <span class="number">350</span>&#125;,<span class="number">0</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	   NexT.motion = &#123;&#125;;</span><br><span class="line">	   </span><br><span class="line">	   ...</span><br></pre></td></tr></table></figure>
 
 ]]></content>
       <categories>
@@ -107,5 +92,11 @@
         <tag>博客</tag>
         <tag>hexo</tag>
       </tags>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2021/09/02/%E6%B5%8B%E8%AF%95/</url>
+    <content><![CDATA[<p><img src alt="wallhaven-2648"></p>
+]]></content>
   </entry>
 </search>
