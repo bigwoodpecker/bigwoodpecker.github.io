@@ -51,6 +51,53 @@
 
 <p>注意文件夹必须为空</p>
 <p><img src="/2021/09/01/%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/image-20210902202001582.png" alt="image-20210902202001582"></p>
+<h1 id="修改文章目录导航"><a href="#修改文章目录导航" class="headerlink" title="修改文章目录导航"></a>修改文章目录导航</h1><h2 id="取消数字编号"><a href="#取消数字编号" class="headerlink" title="取消数字编号"></a>取消数字编号</h2><p>在主题配置文件中关闭目录中的数字编号：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">themes\next\_config.ymltoc:</span><br><span class="line">  number: false  # 关闭目录中的数字编号</span><br></pre></td></tr></table></figure>
+
+<h2 id="展开全部目录层级"><a href="#展开全部目录层级" class="headerlink" title="展开全部目录层级"></a>展开全部目录层级</h2><p>默认情况下文章的多级目录是折叠的，点击才会触发下级菜单的展开，并且并且同时只能展开一个目录分支，这会造成在点击不同目录标题的时候目录跳来跳去。如果你想实现默认展开全部目录的功能，可以在自定义样式文件中添加以下代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">themes\next\source\css\_custom\custom.styl//TOC目录默认全部展开</span><br><span class="line">.post-toc .nav .nav-child &#123;</span><br><span class="line">  display: block;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="默认展开两级目录"><a href="#默认展开两级目录" class="headerlink" title="默认展开两级目录"></a>默认展开两级目录</h2><p>通常文章内会出现多级标题，对应的目录里就会有多级导航出现，这时候一些原本你不希望出现的次要标题也会在目录中出现并且无法折叠。可以通过以下样式实现默认只展开两级目录，这样以来就通过一个折中的方案完美解决了目录折叠的问题。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">themes\next\source\css\_custom\custom.styl//TOC目录默认展开两级</span><br><span class="line">.post-toc .nav .nav-level-1&gt;.nav-child &#123;</span><br><span class="line">  display: block;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="只显示两级目录"><a href="#只显示两级目录" class="headerlink" title="只显示两级目录"></a>只显示两级目录</h2><p>如果你根本不想让三级及以上的标题出现 TOC 导航目录中，可以考虑在自定义样式文件中添加以下代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">themes\next\source\css\_custom\custom.styl//TOC目录默认只显示两级目录</span><br><span class="line">.nav-level-2 &gt; .nav-child &#123;</span><br><span class="line">  display: none !important;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="主动隐藏文章目录"><a href="#主动隐藏文章目录" class="headerlink" title="主动隐藏文章目录"></a>主动隐藏文章目录</h2><p>如果你写了一篇并不算长的文章，没有层层嵌套的多级目录结构，此时侧边的文章目录空荡荡的就有点鸡肋了。修改侧边栏布局模板中的相关逻辑代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">themes\next\layout\_macro\sidebar.swig- &#123;% set display_toc = is_post and theme.toc.enable %&#125;</span><br><span class="line">+ &#123;% set display_toc = is_post and theme.toc.enable and not page.hide_toc %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后就可在 Front-Matter 中设定变量 hide_toc 用于控制是否隐藏侧边目录</p>
+<h1 id="Mist外观下，修改侧边栏在左边"><a href="#Mist外观下，修改侧边栏在左边" class="headerlink" title="Mist外观下，修改侧边栏在左边"></a>Mist外观下，修改侧边栏在左边</h1><p>参考：</p>
+<ul>
+<li><p><a href="https://blog.fish-404.icu/Blog-adjust-sidebar-nextmist-left/">Blog-调整NexT主题Mist外观侧边栏在左</a></p>
+</li>
+<li><p><a href="http://mashirosorata.vicp.io/HEXO-NEXT%E4%B8%BB%E9%A2%98%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE.html">HEXO+NEXT主题个性化配置|SORA</a></p>
+</li>
+</ul>
+<p>在NexT主题的Mist外观下，侧边栏默认在右，而打开主题配置文件<code>_config.yml</code>查看，只有在<code>Pisces</code>，<code>Gemini</code>这两种外观下才可以通过<code>_config.yml</code>直接修改选择左侧或是右侧。而本人习惯把音乐播放器以及输入法放置于桌面右下角，故侧边栏在右并不方便 。于是在寻找了一些教程后 ，做出了修改，并做此记录和分享。</p>
+<p>在此过程中需要修改如下几个文件：</p>
+<ul>
+<li>sidebar.styl</li>
+<li>sidebar-toggle.styl</li>
+<li>back-to-top.styl</li>
+<li>motion.js</li>
+</ul>
+<p>2019.3.25 更新 增加bug修正部分</p>
+<h2 id="sidebar-styl"><a href="#sidebar-styl" class="headerlink" title="sidebar.styl"></a>sidebar.styl</h2><p>路径：<code>.\themes\next\source\css\_common\components\sidebar\</code><br>将此文件的第3行<code>right</code>改为<code>left</code></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">.sidebar &#123;</span><br><span class="line">  position: fixed;</span><br><span class="line">  left: 0;</span><br><span class="line">  top: 0;</span><br><span class="line">  bottom: 0;</span><br></pre></td></tr></table></figure>
+
+<h2 id="sidebar-toggle-styl"><a href="#sidebar-toggle-styl" class="headerlink" title="sidebar-toggle.styl"></a>sidebar-toggle.styl</h2><p>路径：<code>.\themes\next\source\css\_common\components\sidebar\</code><br>同样将第3行冒号前的<code>right</code>改为<code>left</code></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">left: $b2t-position-right;</span><br></pre></td></tr></table></figure>
+
+<h2 id="back-to-top-styl"><a href="#back-to-top-styl" class="headerlink" title="back-to-top.styl"></a>back-to-top.styl</h2><p>路径：<code>.\themes\next\source\css\_common\components\</code><br>将第5行冒号前的<code>right</code>改为<code>left</code></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">left: $b2t-position-right;</span><br></pre></td></tr></table></figure>
+
+<h2 id="motion-js"><a href="#motion-js" class="headerlink" title="motion.js"></a>motion.js</h2><p>路径：<code>.\themes\next\source\js\src\motion.js</code><br>利用搜索功能找到改文档中的<code>paddingRight</code>字段，将<code>paddingRight</code>改为<code>paddingLeft</code>(共两处)。</p>
+<h2 id="重新部署"><a href="#重新部署" class="headerlink" title="重新部署"></a>重新部署</h2><p>重新部署即可完成侧边栏在左的设置。</p>
+<h1 id="修正缩小窗口时的bug"><a href="#修正缩小窗口时的bug" class="headerlink" title="修正缩小窗口时的bug"></a>修正缩小窗口时的bug</h1><p>自己没注意过这个问题，感谢评论区Jode_He指出和分享。仅使用上面的方案情况下，如果侧边栏的设置是展开状态，在浏览器窗口缩小时会导致侧边栏仍然存在且占据相当大的位置。做以下调整。</p>
+<p>找到<code>./themes/source/js/src/motion.js</code>文件，在<code>$(document).ready(function ()&#123;&#125;)</code>内添加内容：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$(document).ready(function () &#123;</span><br><span class="line"></span><br><span class="line">	window.onload=function()&#123;</span><br><span class="line">	    var bwol=document.body.offsetWidth;</span><br><span class="line">	    if(bwol &lt; 975)&#123;</span><br><span class="line">		$(&#x27;aside#sidebar&#x27;).css(&quot;display&quot;,&quot;none&quot;);</span><br><span class="line">		$(&#x27;body&#x27;).css(&quot;paddingLeft&quot;,&quot;0px&quot;);</span><br><span class="line">	    &#125;</span><br><span class="line">	&#125;</span><br><span class="line">	window.onresize = function()&#123;</span><br><span class="line">	    var bwos=document.body.offsetWidth;</span><br><span class="line">	    bwos &lt; 975 &amp;&amp; $(&#x27;body&#x27;).velocity(&#x27;stop&#x27;).velocity(&#123;paddingLeft: 0&#125;,0);</span><br><span class="line">	    if($(&#x27;aside#sidebar&#x27;).css(&#x27;display&#x27;) != &#x27;none&#x27; &amp;&amp; $(&#x27;aside#sidebar&#x27;).css(&#x27;width&#x27;)!=&#x27;0px&#x27;)</span><br><span class="line">		$(&#x27;body&#x27;).velocity(&#x27;stop&#x27;).velocity(&#123;paddingLeft: 350&#125;,0);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	   NexT.motion = &#123;&#125;;</span><br><span class="line">	   </span><br><span class="line">	   ...</span><br></pre></td></tr></table></figure>
+
 ]]></content>
       <categories>
         <category>博客</category>
