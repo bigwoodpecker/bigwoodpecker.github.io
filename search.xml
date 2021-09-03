@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>typora使用技巧</title>
+    <url>/2021/09/03/typora%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/</url>
+    <content><![CDATA[<p>#Typora中文输入状态下英文符号输出</p>
+<p>Typora可以使用ctrl + . 在中文输入状态下英文符号输出，ctrl + . 即可改回中文输入状态输出中文符号。</p>
+<span id="more"></span>
+
+<p>sdfasdf</p>
+]]></content>
+      <categories>
+        <category>typora</category>
+      </categories>
+      <tags>
+        <tag>typora</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Typora+PicGo-Core+gitee建立图床</title>
     <url>/2021/09/03/Typora+PicGo-Core%E5%BB%BA%E7%AB%8B%E5%9B%BE%E5%BA%8A/</url>
     <content><![CDATA[<p>Typora+PicGo-Core+gitee建立图床(强烈建议不要使用github建立,因为就算图像上传成功,typora也会因为网络问题读取不到图片,很麻烦)</p>
@@ -71,34 +87,6 @@
       <tags>
         <tag>-typora -picgo -gitee</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>typora使用技巧</title>
-    <url>/2021/09/03/typora%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/</url>
-    <content><![CDATA[<p>#Typora中文输入状态下英文符号输出</p>
-<p>Typora可以使用ctrl + . 在中文输入状态下英文符号输出，ctrl + . 即可改回中文输入状态输出中文符号。</p>
-<span id="more"></span>
-
-<p>sdfasdf</p>
-]]></content>
-      <categories>
-        <category>typora</category>
-      </categories>
-      <tags>
-        <tag>typora</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>上传图片测试</title>
-    <url>/2021/09/03/%E5%9B%BE%E7%89%87/</url>
-    <content><![CDATA[<p>你妈假假按揭啊京津冀安监局你妈假假按揭啊京津冀安监局你好啊啊</p>
-<p>你妈假假按揭啊京津冀安监局你妈假假按揭啊京津冀安监局你好啊啊</p>
-<p>你妈假假按揭啊京津冀安监局你妈假假按揭啊京津冀安监局你好啊啊</p>
-<span id="more"></span>
-
-<p>啊哈哈</p>
-<p><img src="https://gitee.com/zlpxiaokeai/img/raw/master/img/image-20210903101435340.png" alt="image-20210903101435340"></p>
-]]></content>
   </entry>
   <entry>
     <title>搭建自己的个人博客</title>
