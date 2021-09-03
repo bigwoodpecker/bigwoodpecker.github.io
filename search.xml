@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>typora使用技巧</title>
+    <url>/2021/09/03/typora%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/</url>
+    <content><![CDATA[<p>#Typora中文输入状态下英文符号输出</p>
+<p>Typora可以使用ctrl + . 在中文输入状态下英文符号输出，ctrl + . 即可改回中文输入状态输出中文符号。</p>
+<span id="more"></span>
+
+]]></content>
+      <categories>
+        <category>typora</category>
+      </categories>
+      <tags>
+        <tag>typora</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>上传图片测试</title>
     <url>/2021/09/02/%E5%9B%BE%E7%89%87/</url>
     <content><![CDATA[<!-- more  -->
