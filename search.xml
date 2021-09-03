@@ -1,22 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>typora使用技巧</title>
-    <url>/2021/09/03/typora%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/</url>
-    <content><![CDATA[<p>#Typora中文输入状态下英文符号输出</p>
-<p>Typora可以使用ctrl + . 在中文输入状态下英文符号输出，ctrl + . 即可改回中文输入状态输出中文符号。</p>
-<span id="more"></span>
-
-<p>sdfasdf</p>
-]]></content>
-      <categories>
-        <category>typora</category>
-      </categories>
-      <tags>
-        <tag>typora</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Typora+PicGo-Core+gitee建立图床</title>
     <url>/2021/09/03/Typora+PicGo-Core%E5%BB%BA%E7%AB%8B%E5%9B%BE%E5%BA%8A/</url>
     <content><![CDATA[<p>Typora+PicGo-Core+gitee建立图床(强烈建议不要使用github建立,因为就算图像上传成功,typora也会因为网络问题读取不到图片,很麻烦)</p>
@@ -92,6 +76,22 @@
       </tags>
   </entry>
   <entry>
+    <title>typora使用技巧</title>
+    <url>/2021/09/03/typora%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/</url>
+    <content><![CDATA[<p>#Typora中文输入状态下英文符号输出</p>
+<p>Typora可以使用ctrl + . 在中文输入状态下英文符号输出，ctrl + . 即可改回中文输入状态输出中文符号。</p>
+<span id="more"></span>
+
+<p>sdfasdf</p>
+]]></content>
+      <categories>
+        <category>typora</category>
+      </categories>
+      <tags>
+        <tag>typora</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>搭建自己的个人博客</title>
     <url>/2021/09/01/%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/</url>
     <content><![CDATA[<p>用hexo和github搭建自己的个人博客</p>
@@ -117,11 +117,16 @@
 <p>如果安装好则会显示以下信息</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo-cli: 4.3.0</span><br><span class="line">os: win32 10.0.18362</span><br><span class="line">node: 16.8.0</span><br><span class="line">v8: 9.2.230.21-node.20</span><br><span class="line">uv: 1.42.0</span><br><span class="line">zlib: 1.2.11</span><br><span class="line">brotli: 1.0.9</span><br><span class="line">ares: 1.17.2</span><br><span class="line">modules: 93</span><br><span class="line">nghttp2: 1.42.0</span><br><span class="line">napi: 8</span><br><span class="line">llhttp: 6.0.2</span><br><span class="line">openssl: 1.1.1k+quic</span><br><span class="line">cldr: 39.0</span><br><span class="line">icu: 69.1</span><br><span class="line">tz: 2021a</span><br><span class="line">unicode: 13.0</span><br><span class="line">ngtcp2: 0.1.0-DEV</span><br><span class="line">nghttp3: 0.1.0-DEV</span><br></pre></td></tr></table></figure>
 
-<h1 id="hexo创建博客"><a href="#hexo创建博客" class="headerlink" title="hexo创建博客"></a>hexo创建博客</h1><p>创建一个空白文件夹blog，作为博客根目录，在该根目录下，运行cmd窗口，执行以下命令初始化博客。</p>
+<h1 id="hexo创建博客"><a href="#hexo创建博客" class="headerlink" title="hexo创建博客"></a>hexo创建博客</h1><p>创建一个空白文件夹blog，作为博客根目录，在该根目录下，运行cmd窗口.</p>
+<p>注意文件夹必须为空</p>
+<p><img src="https://gitee.com/zlpxiaokeai/img/raw/master/img/image-20210903145523286.png" alt="image-20210903145523286"></p>
+<p>然后执行如下命令初始化，执行以下命令初始化博客。</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
 
-<p>注意文件夹必须为空</p>
-<p><img src="/2021/09/01/%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/image-20210902202001582.png" alt="image-20210902202001582"></p>
+
+
+
+
 <h1 id="修改文章目录导航"><a href="#修改文章目录导航" class="headerlink" title="修改文章目录导航"></a>修改文章目录导航</h1><h2 id="取消数字编号"><a href="#取消数字编号" class="headerlink" title="取消数字编号"></a>取消数字编号</h2><p>在主题配置文件中关闭目录中的数字编号：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">themes\next\_config.ymltoc:</span><br><span class="line">  number: false  # 关闭目录中的数字编号</span><br></pre></td></tr></table></figure>
 
@@ -170,6 +175,21 @@
 
 <h3 id="2-解决方案"><a href="#2-解决方案" class="headerlink" title="2.解决方案"></a>2.解决方案</h3><p>这个错误很明显，因为控制台已经告诉我错误代码在 <code>post-details.js</code>里了，顺着提示找到 <code>themes\next\source\js\src\post-details.js</code>，找到第 73 行为目录绑定点击事件的方法，会看到：</p>
 <p><a href="http://img.xiajibagao.top/image-20201217170155109.png"><img src="https://gitee.com/zlpxiaokeai/img/raw/master/img/image-20201217170155109.png" alt="image-20201217170155109"></a></p>
+<h1 id="Hexo博客显示图片办法"><a href="#Hexo博客显示图片办法" class="headerlink" title="Hexo博客显示图片办法"></a>Hexo博客显示图片办法</h1><h2 id="方法一-使用typora-Picgo-gitee"><a href="#方法一-使用typora-Picgo-gitee" class="headerlink" title="方法一 使用typora+Picgo+gitee"></a>方法一 使用typora+Picgo+gitee</h2><a href="/2021/09/03/Typora+PicGo-Core%E5%BB%BA%E7%AB%8B%E5%9B%BE%E5%BA%8A/" title="使用typora+Picgo+gitee 建立图床,显示hexo博客中图片">使用typora+Picgo+gitee 建立图床,显示hexo博客中图片</a>
+
+<h2 id="方法二-建立同名文件夹"><a href="#方法二-建立同名文件夹" class="headerlink" title="方法二   建立同名文件夹"></a>方法二   建立同名文件夹</h2><ol>
+<li><p>修改博客配置。</p>
+<p>修改博客根目录中<code>_config.yml</code>文件的配置项<code>post_asset_folder</code>为<code>true</code>：</p>
+<p>2.通过<code>hexo new xxx</code>新建博客后，会产生一个和文件同名的文件夹。(或者自己建立一个xxx.md文件和xxx文件夹)</p>
+</li>
+</ol>
+<p><img src="https://gitee.com/zlpxiaokeai/img/raw/master/img/image-20210903145943342.png" alt="image-20210903145943342"></p>
+<p>在博客根目录中下使用npm安装插件：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install https://github.com/CodeFalling/hexo-asset-image --save</span><br></pre></td></tr></table></figure>
+
+<p>当文章需要添加图片时，将需要添加的图片放入同名的文件夹中，使用相对位置索引到该图片,如下所示.</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">![示例](./xxxx/a.png)</span><br></pre></td></tr></table></figure>
+
 <h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><h2 id="next5中文目录点击无法跳转问题"><a href="#next5中文目录点击无法跳转问题" class="headerlink" title="next5中文目录点击无法跳转问题"></a>next5中文目录点击无法跳转问题</h2><p>添加如下代码即可:</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 对获取到的url进行重编码</span></span><br><span class="line">targetSelector = <span class="built_in">decodeURI</span>(<span class="built_in">this</span>.getAttribute(<span class="string">&#x27;href&#x27;</span>))</span><br></pre></td></tr></table></figure>
 
