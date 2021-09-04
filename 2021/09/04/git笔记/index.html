@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="typora," />
+  <meta name="keywords" content="git," />
 
 
 
@@ -79,18 +79,28 @@
 
 
 
-<meta name="description" content="#Typora中文输入状态下英文符号输出 Typora可以使用ctrl + . 在中文输入状态下英文符号输出，ctrl + . 即可改回中文输入状态输出中文符号。">
+<meta name="description" content="#Git的四个区域  工作区(Workspace) 进行代码开发的的地方,也就是代码所在的文件夹，是你当前看到的，也是最新的。 平常我们开发就是拷贝远程仓库中的一个分支，基于该分支进行开发。在开发过程中就是对工作区的操作。 暂存区(Stage) .git目录下的index文件, 暂存区会记录git add添加文件的相关信息(文件名、大小、timestamp…)，不保存文件实体, 通过id指向每个文">
 <meta property="og:type" content="article">
-<meta property="og:title" content="typora使用技巧">
-<meta property="og:url" content="https://zlpxiaokeai.gitee.io/2021/09/03/typora%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/index.html">
+<meta property="og:title" content="git笔记">
+<meta property="og:url" content="https://zlpxiaokeai.gitee.io/2021/09/04/git%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="南亦">
-<meta property="og:description" content="#Typora中文输入状态下英文符号输出 Typora可以使用ctrl + . 在中文输入状态下英文符号输出，ctrl + . 即可改回中文输入状态输出中文符号。">
+<meta property="og:description" content="#Git的四个区域  工作区(Workspace) 进行代码开发的的地方,也就是代码所在的文件夹，是你当前看到的，也是最新的。 平常我们开发就是拷贝远程仓库中的一个分支，基于该分支进行开发。在开发过程中就是对工作区的操作。 暂存区(Stage) .git目录下的index文件, 暂存区会记录git add添加文件的相关信息(文件名、大小、timestamp…)，不保存文件实体, 通过id指向每个文">
 <meta property="og:locale">
-<meta property="article:published_time" content="2021-09-03T01:48:39.669Z">
-<meta property="article:modified_time" content="2021-09-03T02:06:17.282Z">
+<meta property="og:image" content="https://gitee.com/zlpxiaokeai/img/raw/master/img/image-20210904173327012.png">
+<meta property="og:image" content="https://gitee.com/zlpxiaokeai/img/raw/master/img/image-20210904191305153.png">
+<meta property="og:image" content="https://gitee.com/zlpxiaokeai/img/raw/master/img/image-20210904191808364.png">
+<meta property="og:image" content="https://gitee.com/zlpxiaokeai/img/raw/master/img/image-20210904192019305.png">
+<meta property="og:image" content="https://gitee.com/zlpxiaokeai/img/raw/master/img/image-20210904201909286.png">
+<meta property="og:image" content="https://gitee.com/zlpxiaokeai/img/raw/master/img/image-20210904193632666.png">
+<meta property="og:image" content="https://gitee.com/zlpxiaokeai/img/raw/master/img/image-20210904194023699.png">
+<meta property="og:image" content="https://gitee.com/zlpxiaokeai/img/raw/master/img/image-20210904194652751.png">
+<meta property="og:image" content="https://gitee.com/zlpxiaokeai/img/raw/master/img/image-20210904194859950.png">
+<meta property="article:published_time" content="2021-09-04T09:30:48.953Z">
+<meta property="article:modified_time" content="2021-09-04T13:20:17.886Z">
 <meta property="article:author" content="nan">
-<meta property="article:tag" content="typora">
+<meta property="article:tag" content="git">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/zlpxiaokeai/img/raw/master/img/image-20210904173327012.png">
 
 
 
@@ -120,13 +130,13 @@
 
 
 
-  <link rel="canonical" href="https://zlpxiaokeai.gitee.io/2021/09/03/typora使用技巧/"/>
+  <link rel="canonical" href="https://zlpxiaokeai.gitee.io/2021/09/04/git笔记/"/>
 
 
 
 
 
-  <title>typora使用技巧 | 南亦</title>
+  <title>git笔记 | 南亦</title>
   
 
 
@@ -301,7 +311,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zlpxiaokeai.gitee.io/2021/09/03/typora%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/">
+    <link itemprop="mainEntityOfPage" href="https://zlpxiaokeai.gitee.io/2021/09/04/git%E7%AC%94%E8%AE%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -318,7 +328,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">typora使用技巧</h1>
+          <h1 class="post-title" itemprop="name headline">git笔记</h1>
         
 
         <div class="post-meta">
@@ -330,8 +340,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-09-03T09:48:39+08:00">
-                2021-09-03
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-09-04T17:30:48+08:00">
+                2021-09-04
               </time>
             
 
@@ -346,8 +356,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2021-09-03T10:06:17+08:00">
-                2021-09-03
+              <time title="更新于" itemprop="dateModified" datetime="2021-09-04T21:20:17+08:00">
+                2021-09-04
               </time>
             
           </span>
@@ -365,8 +375,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/typora/" itemprop="url" rel="index">
-                    <span itemprop="name">typora</span>
+                  <a href="/categories/git/" itemprop="url" rel="index">
+                    <span itemprop="name">git</span>
                   </a>
                 </span>
 
@@ -396,7 +406,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  51字
+                  1k字
                 </span>
               
 
@@ -412,7 +422,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1分钟
+                  3分钟
                 </span>
               
             </div>
@@ -433,11 +443,74 @@
       
 
       
-        <p>#Typora中文输入状态下英文符号输出</p>
-<p>Typora可以使用ctrl + . 在中文输入状态下英文符号输出，ctrl + . 即可改回中文输入状态输出中文符号。</p>
-<span id="more"></span>
+        <p>#Git的四个区域</p>
+<p><img src="https://gitee.com/zlpxiaokeai/img/raw/master/img/image-20210904173327012.png" alt="image-20210904173327012"></p>
+<p><strong>工作区</strong>(Workspace)</p>
+<p>进行代码开发的的地方,也就是代码所在的文件夹，是你当前看到的，也是<strong>最新的</strong>。</p>
+<p>平常我们开发就是拷贝远程仓库中的一个分支，基于该分支进行开发。在开发过程中就是对工作区的操作。</p>
+<p><strong>暂存区</strong>(Stage)</p>
+<p>.git目录下的index文件, 暂存区会记录<code>git add</code>添加文件的相关信息(文件名、大小、timestamp…)，不保存文件实体, 通过id指向每个文件实体。可以使用<code>git status</code>查看暂存区的状态。暂存区标记了你当前工作区中，哪些内容是被git管理的。</p>
+<p>当你完成某个需求或功能后需要提交到远程仓库，那么第一步就是通过<code>git add</code>先提交到暂存区，被git管理。</p>
+<p><strong>本地仓库(Repository)</strong></p>
+<p>保存了对象被提交 过的各个版本，<strong>比起工作区和暂存区的内容，它要更旧一些</strong>。</p>
+<p><code>git commit</code>后同步index的目录树到本地仓库，方便从下一步通过<code>git push</code>同步本地仓库与远程仓库的同步。</p>
+<p><strong>远程仓库(Remote)</strong></p>
+<p>远程仓库的内容可能被分布在多个地点的处于协作关系的本地仓库修改，因此它可能与本地仓库同步，也可能不同步，但是它的内容是最旧的。</p>
+<p><strong>总结</strong></p>
+<ol>
+<li>任何对象都是在工作区中诞生和被修改；</li>
+<li>任何修改都是从进入index区才开始被版本控制；</li>
+<li><strong>只有把修改提交到本地仓库，该修改才能在仓库中留下痕迹(也就是commit之后)；</strong></li>
+<li>与协作者分享本地的修改，可以把它们push到远程仓库来共享。</li>
+</ol>
+<h1 id="git常用命令"><a href="#git常用命令" class="headerlink" title="git常用命令"></a>git常用命令</h1><p><img src="https://gitee.com/zlpxiaokeai/img/raw/master/img/image-20210904191305153.png" alt="image-20210904191305153"></p>
+<h2 id="设置用户签名"><a href="#设置用户签名" class="headerlink" title="设置用户签名"></a>设置用户签名</h2><p>在命令行输入：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git config --global user.name <span class="string">&quot;Your Name&quot;</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git config --global user.email <span class="string">&quot;email@example.com&quot;</span></span></span><br></pre></td></tr></table></figure>
 
-<p>sdfasdf</p>
+<h2 id="初始化本地库"><a href="#初始化本地库" class="headerlink" title="初始化本地库"></a>初始化本地库</h2><p>创建一个空文件,右键执行git bash here</p>
+<p><img src="https://gitee.com/zlpxiaokeai/img/raw/master/img/image-20210904191808364.png" alt="image-20210904191808364"></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/zlpxiaokeai/img/raw/master/img/image-20210904192019305.png" alt="image-20210904192019305"></p>
+<h1 id="git-dif"><a href="#git-dif" class="headerlink" title="git dif"></a>git dif</h1><p>work tree (工作区) </p>
+<p>index(缓冲区)</p>
+<p>repository(本地仓库)</p>
+<ol>
+<li>git diff：是查看working tree与index的差别的。</li>
+<li>git diff –cached：是查看index与repository的差别的。</li>
+<li>git diff HEAD：是查看working tree和repository的差别的。其中：HEAD代表的是最近的一次commit的信息。</li>
+</ol>
+<p>如图所示，有区别则将两次对比的结果显示在输出中。对比没差别，就不显示。</p>
+<p><img src="https://gitee.com/zlpxiaokeai/img/raw/master/img/image-20210904201909286.png" alt="image-20210904201909286"></p>
+<h1 id="git-log-和git-reflog区别"><a href="#git-log-和git-reflog区别" class="headerlink" title="git log 和git reflog区别"></a>git log 和git reflog区别</h1><p>区别:</p>
+<ul>
+<li><p>git log可以显示所有提交过的版本信息，<strong>不包括已经被删除的 commit 记录和 reset 的操作</strong>。</p>
+</li>
+<li><p>git reflog是显示所有的操作记录，包括提交，回退的操作。一般用来找出操作记录中的版本号，进行回退.</p>
+</li>
+</ul>
+<p><strong>例子</strong></p>
+<p>如图所示,当前已经执行了三次提交,并且Head指针指在了第三次提交处.</p>
+<p><img src="https://gitee.com/zlpxiaokeai/img/raw/master/img/image-20210904193632666.png" alt="image-20210904193632666"></p>
+<p>如果此时执行如下指令:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard 38a6bd891e86644b3772388a122eebb97329b22e</span><br><span class="line">git log</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>可以看到 log里面没有显示之前的third commit操作的信息了.而此时如果想退回third 的那个版本,我们该怎么获取版本号嘞,此时就可以使用git reflog命令.</p>
+<p><img src="https://gitee.com/zlpxiaokeai/img/raw/master/img/image-20210904194023699.png"></p>
+<p>执行如下命令,则会显示所有的操作记录，包括提交，回退，合并，删除分支等等的操作。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reflog</span><br></pre></td></tr></table></figure>
+
+<p>可以看到其中显示了third commit 的版本号。通过使用此版本号，我们可以执行命令跳回第三个版本。</p>
+<p><img src="https://gitee.com/zlpxiaokeai/img/raw/master/img/image-20210904194652751.png" alt="image-20210904194652751"></p>
+<p>同时其中还记录了我们刚刚的reset操作。</p>
+<p><img src="https://gitee.com/zlpxiaokeai/img/raw/master/img/image-20210904194859950.png" alt="image-20210904194859950"></p>
+<p>另外可<a target="_blank" rel="noopener" href="https://blog.csdn.net/chenpuzhen/article/details/92084229">参考git log和git reflog的区别</a>.</p>
+<p>#撤销修改</p>
+<ol>
+<li>当你改乱了工作区某个文件的内容，想直接丢弃工作区的修改时，用命令<code>git checkout -- file</code>。</li>
+<li>当你不但改乱了工作区某个文件的内容，<strong>还添加到了暂存区时</strong>，想丢弃修改，分两步，第一步用命令<code>git reset HEAD &lt;file&gt;</code>，就回到了场景1，第二步按场景1操作。</li>
+<li><strong>已经提交了不合适的修改到版本库(即本地库)时</strong>，想要撤销本次提交，参考<a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/wiki/896043488029600/897013573512192">版本回退</a>一节，不过前提是没有推送到远程库。</li>
+</ol>
 
       
     </div>
@@ -455,7 +528,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/typora/" rel="tag"># typora</a>
+            <a href="/tags/git/" rel="tag"># git</a>
           
         </div>
       
@@ -468,8 +541,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2021/09/01/%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/" rel="next" title="搭建自己的个人博客">
-                <i class="fa fa-chevron-left"></i> 搭建自己的个人博客
+              <a href="/2021/09/04/%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6%E4%B8%8E%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%96%87%E4%BB%B6%E5%8C%BA%E5%88%AB/" rel="next" title="文本文件与二进制文件的区别">
+                <i class="fa fa-chevron-left"></i> 文本文件与二进制文件的区别
               </a>
             
           </div>
@@ -478,8 +551,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2021/09/03/Typora+PicGo-Core%E5%BB%BA%E7%AB%8B%E5%9B%BE%E5%BA%8A/" rel="prev" title="Typora+PicGo-Core+gitee建立图床">
-                Typora+PicGo-Core+gitee建立图床 <i class="fa fa-chevron-right"></i>
+              <a href="/2021/09/04/%E5%91%BD%E4%BB%A4%E8%A1%8C%E8%AF%AD%E6%B3%95%E6%A0%BC%E5%BC%8F%E4%B8%AD%E5%B8%B8%E7%94%A8%E7%AC%A6%E5%8F%B7%E7%9A%84%E5%90%AB%E4%B9%89/" rel="prev" title="命令行语法格式中常用符号的含义">
+                命令行语法格式中常用符号的含义 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -532,8 +605,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -597,6 +679,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="nav-number">1.</span> <span class="nav-text">git常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E7%94%A8%E6%88%B7%E7%AD%BE%E5%90%8D"><span class="nav-number">1.1.</span> <span class="nav-text">设置用户签名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96%E6%9C%AC%E5%9C%B0%E5%BA%93"><span class="nav-number">1.2.</span> <span class="nav-text">初始化本地库</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#git-dif"><span class="nav-number">2.</span> <span class="nav-text">git dif</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#git-log-%E5%92%8Cgit-reflog%E5%8C%BA%E5%88%AB"><span class="nav-number">3.</span> <span class="nav-text">git log 和git reflog区别</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

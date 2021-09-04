@@ -76,6 +76,85 @@
       </tags>
   </entry>
   <entry>
+    <title>git笔记</title>
+    <url>/2021/09/04/git%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<p>#Git的四个区域</p>
+<p><img src="https://gitee.com/zlpxiaokeai/img/raw/master/img/image-20210904173327012.png" alt="image-20210904173327012"></p>
+<p><strong>工作区</strong>(Workspace)</p>
+<p>进行代码开发的的地方,也就是代码所在的文件夹，是你当前看到的，也是<strong>最新的</strong>。</p>
+<p>平常我们开发就是拷贝远程仓库中的一个分支，基于该分支进行开发。在开发过程中就是对工作区的操作。</p>
+<p><strong>暂存区</strong>(Stage)</p>
+<p>.git目录下的index文件, 暂存区会记录<code>git add</code>添加文件的相关信息(文件名、大小、timestamp…)，不保存文件实体, 通过id指向每个文件实体。可以使用<code>git status</code>查看暂存区的状态。暂存区标记了你当前工作区中，哪些内容是被git管理的。</p>
+<p>当你完成某个需求或功能后需要提交到远程仓库，那么第一步就是通过<code>git add</code>先提交到暂存区，被git管理。</p>
+<p><strong>本地仓库(Repository)</strong></p>
+<p>保存了对象被提交 过的各个版本，<strong>比起工作区和暂存区的内容，它要更旧一些</strong>。</p>
+<p><code>git commit</code>后同步index的目录树到本地仓库，方便从下一步通过<code>git push</code>同步本地仓库与远程仓库的同步。</p>
+<p><strong>远程仓库(Remote)</strong></p>
+<p>远程仓库的内容可能被分布在多个地点的处于协作关系的本地仓库修改，因此它可能与本地仓库同步，也可能不同步，但是它的内容是最旧的。</p>
+<p><strong>总结</strong></p>
+<ol>
+<li>任何对象都是在工作区中诞生和被修改；</li>
+<li>任何修改都是从进入index区才开始被版本控制；</li>
+<li><strong>只有把修改提交到本地仓库，该修改才能在仓库中留下痕迹(也就是commit之后)；</strong></li>
+<li>与协作者分享本地的修改，可以把它们push到远程仓库来共享。</li>
+</ol>
+<h1 id="git常用命令"><a href="#git常用命令" class="headerlink" title="git常用命令"></a>git常用命令</h1><p><img src="https://gitee.com/zlpxiaokeai/img/raw/master/img/image-20210904191305153.png" alt="image-20210904191305153"></p>
+<h2 id="设置用户签名"><a href="#设置用户签名" class="headerlink" title="设置用户签名"></a>设置用户签名</h2><p>在命令行输入：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git config --global user.name <span class="string">&quot;Your Name&quot;</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git config --global user.email <span class="string">&quot;email@example.com&quot;</span></span></span><br></pre></td></tr></table></figure>
+
+<h2 id="初始化本地库"><a href="#初始化本地库" class="headerlink" title="初始化本地库"></a>初始化本地库</h2><p>创建一个空文件,右键执行git bash here</p>
+<p><img src="https://gitee.com/zlpxiaokeai/img/raw/master/img/image-20210904191808364.png" alt="image-20210904191808364"></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/zlpxiaokeai/img/raw/master/img/image-20210904192019305.png" alt="image-20210904192019305"></p>
+<h1 id="git-dif"><a href="#git-dif" class="headerlink" title="git dif"></a>git dif</h1><p>work tree (工作区) </p>
+<p>index(缓冲区)</p>
+<p>repository(本地仓库)</p>
+<ol>
+<li>git diff：是查看working tree与index的差别的。</li>
+<li>git diff –cached：是查看index与repository的差别的。</li>
+<li>git diff HEAD：是查看working tree和repository的差别的。其中：HEAD代表的是最近的一次commit的信息。</li>
+</ol>
+<p>如图所示，有区别则将两次对比的结果显示在输出中。对比没差别，就不显示。</p>
+<p><img src="https://gitee.com/zlpxiaokeai/img/raw/master/img/image-20210904201909286.png" alt="image-20210904201909286"></p>
+<h1 id="git-log-和git-reflog区别"><a href="#git-log-和git-reflog区别" class="headerlink" title="git log 和git reflog区别"></a>git log 和git reflog区别</h1><p>区别:</p>
+<ul>
+<li><p>git log可以显示所有提交过的版本信息，<strong>不包括已经被删除的 commit 记录和 reset 的操作</strong>。</p>
+</li>
+<li><p>git reflog是显示所有的操作记录，包括提交，回退的操作。一般用来找出操作记录中的版本号，进行回退.</p>
+</li>
+</ul>
+<p><strong>例子</strong></p>
+<p>如图所示,当前已经执行了三次提交,并且Head指针指在了第三次提交处.</p>
+<p><img src="https://gitee.com/zlpxiaokeai/img/raw/master/img/image-20210904193632666.png" alt="image-20210904193632666"></p>
+<p>如果此时执行如下指令:</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git reset --hard 38a6bd891e86644b3772388a122eebb97329b22e</span><br><span class="line">git log</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>可以看到 log里面没有显示之前的third commit操作的信息了.而此时如果想退回third 的那个版本,我们该怎么获取版本号嘞,此时就可以使用git reflog命令.</p>
+<p><img src="https://gitee.com/zlpxiaokeai/img/raw/master/img/image-20210904194023699.png"></p>
+<p>执行如下命令,则会显示所有的操作记录，包括提交，回退，合并，删除分支等等的操作。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git reflog</span><br></pre></td></tr></table></figure>
+
+<p>可以看到其中显示了third commit 的版本号。通过使用此版本号，我们可以执行命令跳回第三个版本。</p>
+<p><img src="https://gitee.com/zlpxiaokeai/img/raw/master/img/image-20210904194652751.png" alt="image-20210904194652751"></p>
+<p>同时其中还记录了我们刚刚的reset操作。</p>
+<p><img src="https://gitee.com/zlpxiaokeai/img/raw/master/img/image-20210904194859950.png" alt="image-20210904194859950"></p>
+<p>另外可<a href="https://blog.csdn.net/chenpuzhen/article/details/92084229">参考git log和git reflog的区别</a>.</p>
+<p>#撤销修改</p>
+<ol>
+<li>当你改乱了工作区某个文件的内容，想直接丢弃工作区的修改时，用命令<code>git checkout -- file</code>。</li>
+<li>当你不但改乱了工作区某个文件的内容，<strong>还添加到了暂存区时</strong>，想丢弃修改，分两步，第一步用命令<code>git reset HEAD &lt;file&gt;</code>，就回到了场景1，第二步按场景1操作。</li>
+<li><strong>已经提交了不合适的修改到版本库(即本地库)时</strong>，想要撤销本次提交，参考<a href="https://www.liaoxuefeng.com/wiki/896043488029600/897013573512192">版本回退</a>一节，不过前提是没有推送到远程库。</li>
+</ol>
+]]></content>
+      <categories>
+        <category>git</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>typora使用技巧</title>
     <url>/2021/09/03/typora%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/</url>
     <content><![CDATA[<p>#Typora中文输入状态下英文符号输出</p>
@@ -89,6 +168,34 @@
       </categories>
       <tags>
         <tag>typora</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>命令行语法格式中常用符号的含义</title>
+    <url>/2021/09/04/%E5%91%BD%E4%BB%A4%E8%A1%8C%E8%AF%AD%E6%B3%95%E6%A0%BC%E5%BC%8F%E4%B8%AD%E5%B8%B8%E7%94%A8%E7%AC%A6%E5%8F%B7%E7%9A%84%E5%90%AB%E4%B9%89/</url>
+    <content><![CDATA[<p>在描述命令行参数的时候，对其格式有些约定俗成的写法，各系统之间也有差别。一般采用的格式如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">命令&lt;必选参数1|必选参数2&gt; [-option &#123;必选参数1|必选参数2|必选参数3&#125;] [可选参数…]&#123;(默认参数)|参数|参数&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>命令格式中常用的几个符号含义如下</strong>：</p>
+<p>　　尖括号&lt; &gt;：必选参数，实际使用时应将其替换为所需要的参数</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">　　命令语法：git help &lt;name&gt;</span><br><span class="line">　　</span><br><span class="line">　　实际使用：git help config 或 git help branch 或 ... (name被替换为实际的内容)</span><br></pre></td></tr></table></figure>
+
+<p>　　大括号{ }：必选参数，内部使用，包含此处允许使用的参数</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">　　命令语法：git stash &#123;apply | pop&#125;</span><br><span class="line"></span><br><span class="line">　　实际使用：git stash apply 或 git stash pop (只能在必选参数apply或pop中选一个)</span><br></pre></td></tr></table></figure>
+
+<p>　　方括号[ ]：可选参数，可写可不写</p>
+<p>　　小括号( )：指明参数的默认值，只用于{ }中</p>
+<p>　　竖线|：用于分隔多个互斥参数，含义为“或”，使用时只能选择其中的一个</p>
+<p>　　省略号…：任意多个参数</p>
+<p><strong>说明：</strong></p>
+<p>大括号和尖括号的区别为：大括号中只能选择所列举的必选参数（或之一），尖括号中却需要根据实际替换必选参数</p>
+<p>参考<a href="https://www.cnblogs.com/uakora/p/11809501.html">命令行符号的意义</a></p>
+]]></content>
+      <categories>
+        <category>命令行</category>
+      </categories>
+      <tags>
+        <tag>命令</tag>
       </tags>
   </entry>
   <entry>
@@ -290,6 +397,35 @@
       <tags>
         <tag>博客</tag>
         <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>文本文件与二进制文件的区别</title>
+    <url>/2021/09/04/%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6%E4%B8%8E%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%96%87%E4%BB%B6%E5%8C%BA%E5%88%AB/</url>
+    <content><![CDATA[<h1 id="文本文件与二进制文件的定义"><a href="#文本文件与二进制文件的定义" class="headerlink" title="文本文件与二进制文件的定义"></a>文本文件与二进制文件的定义</h1><p>计算机的存储在物理上是二进制的，所以<strong>文本文件与二进制文件的区别并不是物理上的，而是逻辑上的</strong>。这两者只是在编码层次上有差异。简单来说，</p>
+<ul>
+<li>文本文件是基于字符编码的文件，常见的编码有ASCII编码，UNICODE编码等等。</li>
+<li>二进制文件是基于值编码的文件，你可以根据具体应用，指定某个值是什么意思（这样一个过程，可以看作是自定义编码与解码的过程）。</li>
+</ul>
+<span id="more"></span>
+
+<h1 id="文本文件与二进制文件的区别"><a href="#文本文件与二进制文件的区别" class="headerlink" title="文本文件与二进制文件的区别"></a>文本文件与二进制文件的区别</h1><p>文本文件：</p>
+<ol>
+<li>基本上是定长编码的(也有非定长的编码如UTF-8)。</li>
+</ol>
+<p>二进制文件：</p>
+<ol>
+<li>二进制文件可看成是变长编码的，因为是值编码嘛，多少个比特代表一个值，完全由决定。</li>
+</ol>
+<p>文本文件的存储与其读取基本上是个逆过程。而二进制文件的存取显然与文本文件的存取差不多，只是编／解码方式不同而已</p>
+<p>参考:<a href="https://blog.csdn.net/colourful_sky/article/details/80334250">文本文件和二进制文件的差异和区别</a></p>
+]]></content>
+      <categories>
+        <category>文件</category>
+      </categories>
+      <tags>
+        <tag>文本文件</tag>
+        <tag>二进制文件</tag>
       </tags>
   </entry>
 </search>
