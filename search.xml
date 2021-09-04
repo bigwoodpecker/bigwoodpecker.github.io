@@ -78,11 +78,11 @@
   <entry>
     <title>git笔记</title>
     <url>/2021/09/04/git%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<p>#Git的四个区域</p>
-<p><img src="https://gitee.com/zlpxiaokeai/img/raw/master/img/image-20210904173327012.png" alt="image-20210904173327012"></p>
-<p><strong>工作区</strong>(Workspace)</p>
+    <content><![CDATA[<h1 id="Git的四个区域"><a href="#Git的四个区域" class="headerlink" title="Git的四个区域"></a>Git的四个区域</h1><p><strong>工作区</strong>(Workspace)</p>
 <p>进行代码开发的的地方,也就是代码所在的文件夹，是你当前看到的，也是<strong>最新的</strong>。</p>
 <p>平常我们开发就是拷贝远程仓库中的一个分支，基于该分支进行开发。在开发过程中就是对工作区的操作。</p>
+<span id="more"></span>
+
 <p><strong>暂存区</strong>(Stage)</p>
 <p>.git目录下的index文件, 暂存区会记录<code>git add</code>添加文件的相关信息(文件名、大小、timestamp…)，不保存文件实体, 通过id指向每个文件实体。可以使用<code>git status</code>查看暂存区的状态。暂存区标记了你当前工作区中，哪些内容是被git管理的。</p>
 <p>当你完成某个需求或功能后需要提交到远程仓库，那么第一步就是通过<code>git add</code>先提交到暂存区，被git管理。</p>
@@ -91,6 +91,7 @@
 <p><code>git commit</code>后同步index的目录树到本地仓库，方便从下一步通过<code>git push</code>同步本地仓库与远程仓库的同步。</p>
 <p><strong>远程仓库(Remote)</strong></p>
 <p>远程仓库的内容可能被分布在多个地点的处于协作关系的本地仓库修改，因此它可能与本地仓库同步，也可能不同步，但是它的内容是最旧的。</p>
+<p><img src="https://gitee.com/zlpxiaokeai/img/raw/master/img/image-20210904173327012.png" alt="image-20210904173327012"></p>
 <p><strong>总结</strong></p>
 <ol>
 <li>任何对象都是在工作区中诞生和被修改；</li>
@@ -175,6 +176,8 @@
     <url>/2021/09/04/%E5%91%BD%E4%BB%A4%E8%A1%8C%E8%AF%AD%E6%B3%95%E6%A0%BC%E5%BC%8F%E4%B8%AD%E5%B8%B8%E7%94%A8%E7%AC%A6%E5%8F%B7%E7%9A%84%E5%90%AB%E4%B9%89/</url>
     <content><![CDATA[<p>在描述命令行参数的时候，对其格式有些约定俗成的写法，各系统之间也有差别。一般采用的格式如下：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">命令&lt;必选参数1|必选参数2&gt; [-option &#123;必选参数1|必选参数2|必选参数3&#125;] [可选参数…]&#123;(默认参数)|参数|参数&#125;</span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
 
 <p><strong>命令格式中常用的几个符号含义如下</strong>：</p>
 <p>　　尖括号&lt; &gt;：必选参数，实际使用时应将其替换为所需要的参数</p>

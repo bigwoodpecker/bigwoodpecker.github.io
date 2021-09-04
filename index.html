@@ -344,7 +344,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2021-09-04T21:20:11+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2021-09-04T21:23:04+08:00">
                 2021-09-04
               </time>
             
@@ -434,17 +434,6 @@
         
           <p>在描述命令行参数的时候，对其格式有些约定俗成的写法，各系统之间也有差别。一般采用的格式如下：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">命令&lt;必选参数1|必选参数2&gt; [-option &#123;必选参数1|必选参数2|必选参数3&#125;] [可选参数…]&#123;(默认参数)|参数|参数&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>命令格式中常用的几个符号含义如下</strong>：</p>
-<p>　　尖括号&lt; &gt;：必选参数，实际使用时应将其替换为所需要的参数</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">　　命令语法：git help &lt;name&gt;</span><br><span class="line">　　</span><br><span class="line">　　实际使用：git help config 或 git help branch 或 ... (name被替换为实际的内容)</span><br></pre></td></tr></table></figure>
-
-<p>　　大括号{ }：必选参数，内部使用，包含此处允许使用的参数</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">　　命令语法：git stash &#123;apply | pop&#125;</span><br><span class="line"></span><br><span class="line">　　实际使用：git stash apply 或 git stash pop (只能在必选参数apply或pop中选一个)</span><br></pre></td></tr></table></figure>
-
-<p>　　方括号[ ]：可选参数，可写可不写</p>
-<p>　　小括号( )：指明参数的默认值，只用于{ }中</p>
-<p>　　竖线|：用于分隔多个互斥参数，含义为“或”，使用时只能选择其中的一个</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2021/09/04/%E5%91%BD%E4%BB%A4%E8%A1%8C%E8%AF%AD%E6%B3%95%E6%A0%BC%E5%BC%8F%E4%B8%AD%E5%B8%B8%E7%94%A8%E7%AC%A6%E5%8F%B7%E7%9A%84%E5%90%AB%E4%B9%89/#more" rel="contents">
@@ -545,7 +534,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2021-09-04T21:20:17+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2021-09-04T21:23:54+08:00">
                 2021-09-04
               </time>
             
@@ -633,16 +622,9 @@
 
       
         
-          <p>#Git的四个区域</p>
-<p><img src="https://gitee.com/zlpxiaokeai/img/raw/master/img/image-20210904173327012.png" alt="image-20210904173327012"></p>
-<p><strong>工作区</strong>(Workspace)</p>
+          <h1 id="Git的四个区域"><a href="#Git的四个区域" class="headerlink" title="Git的四个区域"></a>Git的四个区域</h1><p><strong>工作区</strong>(Workspace)</p>
 <p>进行代码开发的的地方,也就是代码所在的文件夹，是你当前看到的，也是<strong>最新的</strong>。</p>
 <p>平常我们开发就是拷贝远程仓库中的一个分支，基于该分支进行开发。在开发过程中就是对工作区的操作。</p>
-<p><strong>暂存区</strong>(Stage)</p>
-<p>.git目录下的index文件, 暂存区会记录<code>git add</code>添加文件的相关信息(文件名、大小、timestamp…)，不保存文件实体, 通过id指向每个文件实体。可以使用<code>git status</code>查看暂存区的状态。暂存区标记了你当前工作区中，哪些内容是被git管理的。</p>
-<p>当你完成某个需求或功能后需要提交到远程仓库，那么第一步就是通过<code>git add</code>先提交到暂存区，被git管理。</p>
-<p><strong>本地仓库(Repository)</strong></p>
-<p>保存了对象被提交 过的各个版本，<strong>比起工作区和暂存区的内容，它要更旧一些</strong>。</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2021/09/04/git%E7%AC%94%E8%AE%B0/#more" rel="contents">
