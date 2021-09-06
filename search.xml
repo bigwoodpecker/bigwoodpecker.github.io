@@ -1,22 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>IDEA中快速添加main、System方法</title>
-    <url>/2021/09/06/IDEA%E4%B8%AD%E5%BF%AB%E9%80%9F%E6%B7%BB%E5%8A%A0main%E3%80%81System%E6%96%B9%E6%B3%95/</url>
-    <content><![CDATA[<h1 id="IDEA中快速添加main、System方法"><a href="#IDEA中快速添加main、System方法" class="headerlink" title="IDEA中快速添加main、System方法"></a>IDEA中快速添加main、System方法</h1><p>今天就研究了一下如何在IEDA中实现下面2个功能:</p>
-<ol>
-<li>写main就能补全main方法</li>
-<li>写syso就能补全System.out.println（）</li>
-</ol>
-<span id="more"></span>
-
-<p>参考:<a href="https://blog.csdn.net/wangpengzhi19891223/article/details/78950047/?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_baidulandingword~default-0.no_search_link&spm=1001.2101.3001.4242">IDEA中快速添加main、System方法</a></p>
-]]></content>
-      <categories>
-        <category>idea</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Typora+PicGo-Core+gitee建立图床</title>
     <url>/2021/09/03/Typora+PicGo-Core%E5%BB%BA%E7%AB%8B%E5%9B%BE%E5%BA%8A/</url>
     <content><![CDATA[<p>Typora+PicGo-Core+gitee建立图床(强烈建议不要使用github建立,因为就算图像上传成功,typora也会因为网络问题读取不到图片,很麻烦)</p>
@@ -90,6 +74,23 @@
         <tag>PicGo</tag>
         <tag>gitee</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>IDEA中快速添加main、System方法</title>
+    <url>/2021/09/06/IDEA%E4%B8%AD%E5%BF%AB%E9%80%9F%E6%B7%BB%E5%8A%A0main%E3%80%81System%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<p><strong>IDEA中快速添加main、System方法：</strong></p>
+<p>今天就研究了一下如何在IEDA中实现下面2个功能:</p>
+<ol>
+<li>写main就能补全main方法</li>
+<li>写syso就能补全System.out.println（）</li>
+</ol>
+<span id="more"></span>
+
+<p>参考:<a href="https://blog.csdn.net/wangpengzhi19891223/article/details/78950047/?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_baidulandingword~default-0.no_search_link&spm=1001.2101.3001.4242">IDEA中快速添加main、System方法</a></p>
+]]></content>
+      <categories>
+        <category>idea</category>
+      </categories>
   </entry>
   <entry>
     <title>git笔记</title>
