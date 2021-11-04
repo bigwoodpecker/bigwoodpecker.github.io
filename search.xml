@@ -30,8 +30,7 @@
   <entry>
     <title>MySQL</title>
     <url>/2021/11/04/MySQL/</url>
-    <content><![CDATA[<p>#数据库</p>
-<p>什么是数据库？什么是数据库管理系统？什么是SQL？他们之间的关系是什么？</p>
+    <content><![CDATA[<h1 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h1><p>什么是数据库？什么是数据库管理系统？什么是SQL？他们之间的关系是什么？</p>
 <span id="more"></span>
 
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">数据库：</span><br><span class="line">	英文单词DataBase，简称DB。按照一定格式存储数据的一些文件的组合。</span><br><span class="line">	顾名思义：存储数据的仓库，实际上就是一堆文件。这些文件中存储了具有特定格式的数据。</span><br><span class="line">数据库管理系统：</span><br><span class="line">		DataBaseManagement，简称DBMS。</span><br><span class="line">		数据库管理系统是专门用来管理数据库中数据的，数据库管理系统可以对数据库当中的数据进行增删改查。</span><br><span class="line">常见的数据库管理系统：</span><br><span class="line">		MySQL、Oracle、MS SqlServer、DB2、sybase等....</span><br></pre></td></tr></table></figure>
@@ -196,6 +195,81 @@
       </tags>
   </entry>
   <entry>
+    <title>Typora+PicGo-Core+gitee建立图床</title>
+    <url>/2021/09/03/Typora+PicGo-Core%E5%BB%BA%E7%AB%8B%E5%9B%BE%E5%BA%8A/</url>
+    <content><![CDATA[<p>Typora+PicGo-Core+gitee建立图床(强烈建议不要使用github建立,因为就算图像上传成功,typora也会因为网络问题读取不到图片,很麻烦)</p>
+<span id="more"></span>
+
+<h1 id="typora设置"><a href="#typora设置" class="headerlink" title="typora设置"></a>typora设置</h1><p>typora点击文件,选择偏好设置,点击图像.</p>
+<p>如图所示:</p>
+<ol>
+<li>选择picgo-core</li>
+<li>点击下载更新,按照提示下载即可</li>
+<li>点击,然后选择上传图片</li>
+<li>勾选如图所示规则</li>
+</ol>
+<p><img src="https://gitee.com/zlpxiaokeai/img/raw/master/img/image-20210903103056849.png" alt="image-20210903103056849"></p>
+<h1 id="PicGo-Core插件下载和配置文件"><a href="#PicGo-Core插件下载和配置文件" class="headerlink" title="PicGo-Core插件下载和配置文件"></a>PicGo-Core插件下载和配置文件</h1><h2 id="node-js安装"><a href="#node-js安装" class="headerlink" title="node.js安装"></a>node.js安装</h2><p>为后续顺利安装插件，先安装好node.js环境；到node.js官网:<a href="https://nodejs.org/en/%E4%B8%8B%E8%BD%BD%E6%88%96%E8%80%85%E7%82%B9%E5%87%BBhttps://nodejs.org/dist/%E8%BF%9B%E5%8E%BB%E5%8F%AF%E9%80%89%E6%8B%A9%E5%90%84%E7%89%88%E6%9C%AC%E8%BF%9B%E8%A1%8C%E7%9B%B8%E5%BA%94%E7%9A%84%E4%B8%8B%E8%BD%BD">https://nodejs.org/en/下载或者点击https://nodejs.org/dist/进去可选择各版本进行相应的下载</a></p>
+<p>检查PATH环境变量是否配置了Node.js，在cmd窗口输入命令“path”查下是否有node.js路径；</p>
+<p><img src="https://gitee.com/zlpxiaokeai/img/raw/master/img/image-20210903103621840.png" alt="image-20210903103621840"></p>
+<p>我们可以看到PATH环境变量已经包含node.js,在cmd窗口继续输入命令“node –version”会输出版本信息，为以下安装插件的node.js环境就准备完毕了！</p>
+<p><img src="https://gitee.com/zlpxiaokeai/img/raw/master/img/image-20210903103707330.png" alt="image-20210903103707330"></p>
+<h2 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h2><p>分别安装gitee-uploader，github-plus插件来支持gitee，github图床上传.</p>
+<p>首先确认picdo-core安装的位置在那儿,获取路径方式如下.</p>
+<ol>
+<li>首先依次点击typora,文件,偏好设置,图像,到达如图所示位置</li>
+<li>点击验证图片上传选项</li>
+<li>下面第二个图红线圈出的位置即为picdo-core安装位置</li>
+</ol>
+<p><img src="https://gitee.com/zlpxiaokeai/img/raw/master/img/image-20210903103852867.png" alt="image-20210903103852867"></p>
+<p><img src="https://gitee.com/zlpxiaokeai/img/raw/master/img/image-20210903104101668.png" alt="image-20210903104101668"></p>
+<p>然后在picgo安装的路径下运行cmd窗口安装插件（此处就用到了以上node.js环境支持）；</p>
+<p><img src="https://gitee.com/zlpxiaokeai/img/raw/master/img/image-20210903104407557.png" alt="image-20210903104407557"></p>
+<p>如图所示在上方输入cmd,点击回车即可在此文件夹运行cmd窗口.</p>
+<p>依次运行下面的命令:</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">.\picgo.exe install gitee-uploader   #gitee的插件</span><br><span class="line"></span><br><span class="line">./picgo install super-prefix  #　上传前文件重命名</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="创建gitee仓库"><a href="#创建gitee仓库" class="headerlink" title="创建gitee仓库"></a>创建gitee仓库</h2><p>仓库是用来存放上传的图片的。</p>
+<ol>
+<li>填写仓库名称</li>
+<li>设置开源</li>
+<li>选中模板</li>
+</ol>
+<p><img src="https://gitee.com/zlpxiaokeai/img/raw/master/img/image-20210903105641128.png" alt="image-20210903105641128"></p>
+<h2 id="获取gitee-token-令牌"><a href="#获取gitee-token-令牌" class="headerlink" title="获取gitee token(令牌)"></a>获取gitee token(令牌)</h2><p>生成自己Gitee的token，用于下面的配置，使得Picgo-core可以操作你的仓库；</p>
+<p>申请token:</p>
+<ol>
+<li>点击gitee里面自己的头像</li>
+<li>点击设置</li>
+<li>点击私人令牌</li>
+</ol>
+<p><img src="https://gitee.com/zlpxiaokeai/img/raw/master/img/image-20210903110011057.png" alt="image-20210903110011057"></p>
+<p>点击生成令牌</p>
+<p><img src="https://gitee.com/zlpxiaokeai/img/raw/master/img/image-20210903110132505.png" alt="image-20210903110132505"></p>
+<ol>
+<li>私人令牌描述自己随便写即可</li>
+<li>一定要勾选projects,这样picgo才能上传图片到你的gitee刚刚生成的库里面</li>
+<li>点击提交</li>
+<li>保存生成的token,下面要用到,一定要先复制好,这个token只会出现这一次</li>
+</ol>
+<p><img src="https://gitee.com/zlpxiaokeai/img/raw/master/img/image-20210903110231791.png" alt="image-20210903110231791"></p>
+<h2 id="配置-picgo-config-json文件"><a href="#配置-picgo-config-json文件" class="headerlink" title="配置~/.picgo/config.json文件"></a>配置~/.picgo/config.json文件</h2><p>如下方式打开配置文件</p>
+<p><img src="https://gitee.com/zlpxiaokeai/img/raw/master/img/image-20210904105157434.png" alt="image-20210903105157434"></p>
+<p>配置如下信息</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;picBed&quot;</span>: &#123;</span><br><span class="line">    <span class="attr">&quot;uploader&quot;</span>: <span class="string">&quot;gitee&quot;</span>, <span class="comment">// 代表当前的上传图床</span></span><br><span class="line">    <span class="attr">&quot;gitee&quot;</span>: &#123;</span><br><span class="line">      <span class="attr">&quot;repo&quot;</span>: <span class="string">&quot;用户名/仓库名称 &quot;</span>,    <span class="comment">//  必填</span></span><br><span class="line">      <span class="attr">&quot;token&quot;</span>: <span class="string">&quot;——————————&quot;</span>,    <span class="comment">// gitee 私人令牌,刚刚获取的token 必填</span></span><br><span class="line">      <span class="attr">&quot;path&quot;</span>: <span class="string">&quot;img/&quot;</span>, <span class="comment">// 自定义存储路径，比如 img/ </span></span><br><span class="line">      <span class="attr">&quot;customUrl&quot;</span>: <span class="string">&quot;&quot;</span>, <span class="comment">// 没有自己的域名的话，可以默认为空，不填写</span></span><br><span class="line">      <span class="attr">&quot;branch&quot;</span>: <span class="string">&quot;master&quot;</span> <span class="comment">// 分支名，默认是 master</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">&quot;picgoPlugins&quot;</span>: &#123;</span><br><span class="line">    <span class="attr">&quot;picgo-plugin-gitee-uploader&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">&quot;picgo-plugin-super-prefix&quot;</span>: <span class="literal">true</span></span><br><span class="line">  &#125;, <span class="comment">// 为插件预留</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Typora</category>
+        <category>PicGo</category>
+      </categories>
+      <tags>
+        <tag>Typora</tag>
+        <tag>PicGo</tag>
+        <tag>gitee</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>git笔记</title>
     <url>/2021/09/04/git%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<h1 id="Git的四个区域"><a href="#Git的四个区域" class="headerlink" title="Git的四个区域"></a>Git的四个区域</h1><p><strong>工作区</strong>(Workspace)</p>
@@ -287,79 +361,15 @@
       </tags>
   </entry>
   <entry>
-    <title>Typora+PicGo-Core+gitee建立图床</title>
-    <url>/2021/09/03/Typora+PicGo-Core%E5%BB%BA%E7%AB%8B%E5%9B%BE%E5%BA%8A/</url>
-    <content><![CDATA[<p>Typora+PicGo-Core+gitee建立图床(强烈建议不要使用github建立,因为就算图像上传成功,typora也会因为网络问题读取不到图片,很麻烦)</p>
+    <title>private的访问权限是本类，而不是本对象</title>
+    <url>/2021/09/22/private%E7%9A%84%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90%E6%98%AF%E6%9C%AC%E7%B1%BB%EF%BC%8C%E8%80%8C%E4%B8%8D%E6%98%AF%E6%9C%AC%E5%AF%B9%E8%B1%A1/</url>
+    <content><![CDATA[<p>如下面代码所示, object向下转型为student类,在Student类中equals方法中就可以访问私有属性name和age,也即<strong>证明了private的访问权限是本类，而不是本对象.</strong></p>
 <span id="more"></span>
 
-<h1 id="typora设置"><a href="#typora设置" class="headerlink" title="typora设置"></a>typora设置</h1><p>typora点击文件,选择偏好设置,点击图像.</p>
-<p>如图所示:</p>
-<ol>
-<li>选择picgo-core</li>
-<li>点击下载更新,按照提示下载即可</li>
-<li>点击,然后选择上传图片</li>
-<li>勾选如图所示规则</li>
-</ol>
-<p><img src="https://gitee.com/zlpxiaokeai/img/raw/master/img/image-20210903103056849.png" alt="image-20210903103056849"></p>
-<h1 id="PicGo-Core插件下载和配置文件"><a href="#PicGo-Core插件下载和配置文件" class="headerlink" title="PicGo-Core插件下载和配置文件"></a>PicGo-Core插件下载和配置文件</h1><h2 id="node-js安装"><a href="#node-js安装" class="headerlink" title="node.js安装"></a>node.js安装</h2><p>为后续顺利安装插件，先安装好node.js环境；到node.js官网:<a href="https://nodejs.org/en/%E4%B8%8B%E8%BD%BD%E6%88%96%E8%80%85%E7%82%B9%E5%87%BBhttps://nodejs.org/dist/%E8%BF%9B%E5%8E%BB%E5%8F%AF%E9%80%89%E6%8B%A9%E5%90%84%E7%89%88%E6%9C%AC%E8%BF%9B%E8%A1%8C%E7%9B%B8%E5%BA%94%E7%9A%84%E4%B8%8B%E8%BD%BD">https://nodejs.org/en/下载或者点击https://nodejs.org/dist/进去可选择各版本进行相应的下载</a></p>
-<p>检查PATH环境变量是否配置了Node.js，在cmd窗口输入命令“path”查下是否有node.js路径；</p>
-<p><img src="https://gitee.com/zlpxiaokeai/img/raw/master/img/image-20210903103621840.png" alt="image-20210903103621840"></p>
-<p>我们可以看到PATH环境变量已经包含node.js,在cmd窗口继续输入命令“node –version”会输出版本信息，为以下安装插件的node.js环境就准备完毕了！</p>
-<p><img src="https://gitee.com/zlpxiaokeai/img/raw/master/img/image-20210903103707330.png" alt="image-20210903103707330"></p>
-<h2 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h2><p>分别安装gitee-uploader，github-plus插件来支持gitee，github图床上传.</p>
-<p>首先确认picdo-core安装的位置在那儿,获取路径方式如下.</p>
-<ol>
-<li>首先依次点击typora,文件,偏好设置,图像,到达如图所示位置</li>
-<li>点击验证图片上传选项</li>
-<li>下面第二个图红线圈出的位置即为picdo-core安装位置</li>
-</ol>
-<p><img src="https://gitee.com/zlpxiaokeai/img/raw/master/img/image-20210903103852867.png" alt="image-20210903103852867"></p>
-<p><img src="https://gitee.com/zlpxiaokeai/img/raw/master/img/image-20210903104101668.png" alt="image-20210903104101668"></p>
-<p>然后在picgo安装的路径下运行cmd窗口安装插件（此处就用到了以上node.js环境支持）；</p>
-<p><img src="https://gitee.com/zlpxiaokeai/img/raw/master/img/image-20210903104407557.png" alt="image-20210903104407557"></p>
-<p>如图所示在上方输入cmd,点击回车即可在此文件夹运行cmd窗口.</p>
-<p>依次运行下面的命令:</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">.\picgo.exe install gitee-uploader   #gitee的插件</span><br><span class="line"></span><br><span class="line">./picgo install super-prefix  #　上传前文件重命名</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="创建gitee仓库"><a href="#创建gitee仓库" class="headerlink" title="创建gitee仓库"></a>创建gitee仓库</h2><p>仓库是用来存放上传的图片的。</p>
-<ol>
-<li>填写仓库名称</li>
-<li>设置开源</li>
-<li>选中模板</li>
-</ol>
-<p><img src="https://gitee.com/zlpxiaokeai/img/raw/master/img/image-20210903105641128.png" alt="image-20210903105641128"></p>
-<h2 id="获取gitee-token-令牌"><a href="#获取gitee-token-令牌" class="headerlink" title="获取gitee token(令牌)"></a>获取gitee token(令牌)</h2><p>生成自己Gitee的token，用于下面的配置，使得Picgo-core可以操作你的仓库；</p>
-<p>申请token:</p>
-<ol>
-<li>点击gitee里面自己的头像</li>
-<li>点击设置</li>
-<li>点击私人令牌</li>
-</ol>
-<p><img src="https://gitee.com/zlpxiaokeai/img/raw/master/img/image-20210903110011057.png" alt="image-20210903110011057"></p>
-<p>点击生成令牌</p>
-<p><img src="https://gitee.com/zlpxiaokeai/img/raw/master/img/image-20210903110132505.png" alt="image-20210903110132505"></p>
-<ol>
-<li>私人令牌描述自己随便写即可</li>
-<li>一定要勾选projects,这样picgo才能上传图片到你的gitee刚刚生成的库里面</li>
-<li>点击提交</li>
-<li>保存生成的token,下面要用到,一定要先复制好,这个token只会出现这一次</li>
-</ol>
-<p><img src="https://gitee.com/zlpxiaokeai/img/raw/master/img/image-20210903110231791.png" alt="image-20210903110231791"></p>
-<h2 id="配置-picgo-config-json文件"><a href="#配置-picgo-config-json文件" class="headerlink" title="配置~/.picgo/config.json文件"></a>配置~/.picgo/config.json文件</h2><p>如下方式打开配置文件</p>
-<p><img src="https://gitee.com/zlpxiaokeai/img/raw/master/img/image-20210904105157434.png" alt="image-20210903105157434"></p>
-<p>配置如下信息</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;picBed&quot;</span>: &#123;</span><br><span class="line">    <span class="attr">&quot;uploader&quot;</span>: <span class="string">&quot;gitee&quot;</span>, <span class="comment">// 代表当前的上传图床</span></span><br><span class="line">    <span class="attr">&quot;gitee&quot;</span>: &#123;</span><br><span class="line">      <span class="attr">&quot;repo&quot;</span>: <span class="string">&quot;用户名/仓库名称 &quot;</span>,    <span class="comment">//  必填</span></span><br><span class="line">      <span class="attr">&quot;token&quot;</span>: <span class="string">&quot;——————————&quot;</span>,    <span class="comment">// gitee 私人令牌,刚刚获取的token 必填</span></span><br><span class="line">      <span class="attr">&quot;path&quot;</span>: <span class="string">&quot;img/&quot;</span>, <span class="comment">// 自定义存储路径，比如 img/ </span></span><br><span class="line">      <span class="attr">&quot;customUrl&quot;</span>: <span class="string">&quot;&quot;</span>, <span class="comment">// 没有自己的域名的话，可以默认为空，不填写</span></span><br><span class="line">      <span class="attr">&quot;branch&quot;</span>: <span class="string">&quot;master&quot;</span> <span class="comment">// 分支名，默认是 master</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">&quot;picgoPlugins&quot;</span>: &#123;</span><br><span class="line">    <span class="attr">&quot;picgo-plugin-gitee-uploader&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">&quot;picgo-plugin-super-prefix&quot;</span>: <span class="literal">true</span></span><br><span class="line">  &#125;, <span class="comment">// 为插件预留</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-]]></content>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span>  <span class="title">Student</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span>  String name;</span><br><span class="line">    <span class="keyword">private</span>  <span class="keyword">int</span> age;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object o)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span> == o) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">if</span> (o == <span class="keyword">null</span> || getClass() != o.getClass()) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        Student student = (Student) o;</span><br><span class="line">        <span class="keyword">return</span> age == student.age &amp;&amp;</span><br><span class="line">                Objects.equals(name, student.name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
-        <category>Typora</category>
-        <category>PicGo</category>
+        <category>java</category>
       </categories>
-      <tags>
-        <tag>Typora</tag>
-        <tag>PicGo</tag>
-        <tag>gitee</tag>
-      </tags>
   </entry>
   <entry>
     <title>typora使用技巧</title>
@@ -376,17 +386,6 @@
       <tags>
         <tag>typora</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>private的访问权限是本类，而不是本对象</title>
-    <url>/2021/09/22/private%E7%9A%84%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90%E6%98%AF%E6%9C%AC%E7%B1%BB%EF%BC%8C%E8%80%8C%E4%B8%8D%E6%98%AF%E6%9C%AC%E5%AF%B9%E8%B1%A1/</url>
-    <content><![CDATA[<p>如下面代码所示, object向下转型为student类,在Student类中equals方法中就可以访问私有属性name和age,也即<strong>证明了private的访问权限是本类，而不是本对象.</strong></p>
-<span id="more"></span>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span>  <span class="title">Student</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span>  String name;</span><br><span class="line">    <span class="keyword">private</span>  <span class="keyword">int</span> age;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object o)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span> == o) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">if</span> (o == <span class="keyword">null</span> || getClass() != o.getClass()) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        Student student = (Student) o;</span><br><span class="line">        <span class="keyword">return</span> age == student.age &amp;&amp;</span><br><span class="line">                Objects.equals(name, student.name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>java</category>
-      </categories>
   </entry>
   <entry>
     <title>命令行语法格式中常用符号的含义</title>
@@ -416,35 +415,6 @@
       </categories>
       <tags>
         <tag>命令</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>文本文件与二进制文件的区别</title>
-    <url>/2021/09/04/%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6%E4%B8%8E%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%96%87%E4%BB%B6%E5%8C%BA%E5%88%AB/</url>
-    <content><![CDATA[<h1 id="文本文件与二进制文件的定义"><a href="#文本文件与二进制文件的定义" class="headerlink" title="文本文件与二进制文件的定义"></a>文本文件与二进制文件的定义</h1><p>计算机的存储在物理上是二进制的，所以<strong>文本文件与二进制文件的区别并不是物理上的，而是逻辑上的</strong>。这两者只是在编码层次上有差异。简单来说，</p>
-<ul>
-<li>文本文件是基于字符编码的文件，常见的编码有ASCII编码，UNICODE编码等等。</li>
-<li>二进制文件是基于值编码的文件，你可以根据具体应用，指定某个值是什么意思（这样一个过程，可以看作是自定义编码与解码的过程）。</li>
-</ul>
-<span id="more"></span>
-
-<h1 id="文本文件与二进制文件的区别"><a href="#文本文件与二进制文件的区别" class="headerlink" title="文本文件与二进制文件的区别"></a>文本文件与二进制文件的区别</h1><p>文本文件：</p>
-<ol>
-<li>基本上是定长编码的(也有非定长的编码如UTF-8)。</li>
-</ol>
-<p>二进制文件：</p>
-<ol>
-<li>二进制文件可看成是变长编码的，因为是值编码嘛，多少个比特代表一个值，完全由决定。</li>
-</ol>
-<p>文本文件的存储与其读取基本上是个逆过程。而二进制文件的存取显然与文本文件的存取差不多，只是编／解码方式不同而已</p>
-<p>参考:<a href="https://blog.csdn.net/colourful_sky/article/details/80334250">文本文件和二进制文件的差异和区别</a></p>
-]]></content>
-      <categories>
-        <category>文件</category>
-      </categories>
-      <tags>
-        <tag>文本文件</tag>
-        <tag>二进制文件</tag>
       </tags>
   </entry>
   <entry>
@@ -646,6 +616,35 @@
       <tags>
         <tag>博客</tag>
         <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>文本文件与二进制文件的区别</title>
+    <url>/2021/09/04/%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6%E4%B8%8E%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%96%87%E4%BB%B6%E5%8C%BA%E5%88%AB/</url>
+    <content><![CDATA[<h1 id="文本文件与二进制文件的定义"><a href="#文本文件与二进制文件的定义" class="headerlink" title="文本文件与二进制文件的定义"></a>文本文件与二进制文件的定义</h1><p>计算机的存储在物理上是二进制的，所以<strong>文本文件与二进制文件的区别并不是物理上的，而是逻辑上的</strong>。这两者只是在编码层次上有差异。简单来说，</p>
+<ul>
+<li>文本文件是基于字符编码的文件，常见的编码有ASCII编码，UNICODE编码等等。</li>
+<li>二进制文件是基于值编码的文件，你可以根据具体应用，指定某个值是什么意思（这样一个过程，可以看作是自定义编码与解码的过程）。</li>
+</ul>
+<span id="more"></span>
+
+<h1 id="文本文件与二进制文件的区别"><a href="#文本文件与二进制文件的区别" class="headerlink" title="文本文件与二进制文件的区别"></a>文本文件与二进制文件的区别</h1><p>文本文件：</p>
+<ol>
+<li>基本上是定长编码的(也有非定长的编码如UTF-8)。</li>
+</ol>
+<p>二进制文件：</p>
+<ol>
+<li>二进制文件可看成是变长编码的，因为是值编码嘛，多少个比特代表一个值，完全由决定。</li>
+</ol>
+<p>文本文件的存储与其读取基本上是个逆过程。而二进制文件的存取显然与文本文件的存取差不多，只是编／解码方式不同而已</p>
+<p>参考:<a href="https://blog.csdn.net/colourful_sky/article/details/80334250">文本文件和二进制文件的差异和区别</a></p>
+]]></content>
+      <categories>
+        <category>文件</category>
+      </categories>
+      <tags>
+        <tag>文本文件</tag>
+        <tag>二进制文件</tag>
       </tags>
   </entry>
 </search>
