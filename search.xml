@@ -418,204 +418,27 @@
       </tags>
   </entry>
   <entry>
-    <title>搭建自己的个人博客</title>
-    <url>/2021/09/01/%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/</url>
-    <content><![CDATA[<p>用hexo和github搭建自己的个人博客</p>
+    <title>得到需要资源的绝对路径方法</title>
+    <url>/2021/11/23/%E5%BE%97%E5%88%B0%E9%9C%80%E8%A6%81%E8%B5%84%E6%BA%90%E7%9A%84%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<h1 id="得到需要资源的绝对路径方法"><a href="#得到需要资源的绝对路径方法" class="headerlink" title="得到需要资源的绝对路径方法"></a>得到需要资源的绝对路径方法</h1><p>下面是一些得到classpath和当前类的绝对路径的一些方法。你可能需要使用其中的一些方法来得到你需要的资源的绝对路径。</p>
 <span id="more"></span>
 
-
-
-<h1 id="环境安装"><a href="#环境安装" class="headerlink" title="环境安装"></a>环境安装</h1><ol>
-<li>git</li>
-<li>node.js</li>
-<li>hexo</li>
-</ol>
-<h2 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h2><p>直接在点击下面链接下载安装。然后按照步骤安装即可。</p>
-<p><a href="https://git-scm.com/">https://git-scm.com/</a></p>
-<h2 id="安装node-js"><a href="#安装node-js" class="headerlink" title="安装node.js"></a>安装node.js</h2><p>同样点击下面链接下载安装。然后按照步骤安装即可。</p>
-<p><a href="https://nodejs.org/en/download/">https://nodejs.org/en/download/</a></p>
-<h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><p>通过下面命令进行安装</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-
-<p>执行以下命令确认hexo已安装好，该命令会显示hexo的版本及依赖的包。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
-
-<p>如果安装好则会显示以下信息</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo-cli: 4.3.0</span><br><span class="line">os: win32 10.0.18362</span><br><span class="line">node: 16.8.0</span><br><span class="line">v8: 9.2.230.21-node.20</span><br><span class="line">uv: 1.42.0</span><br><span class="line">zlib: 1.2.11</span><br><span class="line">brotli: 1.0.9</span><br><span class="line">ares: 1.17.2</span><br><span class="line">modules: 93</span><br><span class="line">nghttp2: 1.42.0</span><br><span class="line">napi: 8</span><br><span class="line">llhttp: 6.0.2</span><br><span class="line">openssl: 1.1.1k+quic</span><br><span class="line">cldr: 39.0</span><br><span class="line">icu: 69.1</span><br><span class="line">tz: 2021a</span><br><span class="line">unicode: 13.0</span><br><span class="line">ngtcp2: 0.1.0-DEV</span><br><span class="line">nghttp3: 0.1.0-DEV</span><br></pre></td></tr></table></figure>
-
-<h1 id="hexo创建博客"><a href="#hexo创建博客" class="headerlink" title="hexo创建博客"></a>hexo创建博客</h1><p>创建一个空白文件夹blog，作为博客根目录，在该根目录下，运行cmd窗口.</p>
-<p>注意文件夹必须为空</p>
-<p><img src="https://gitee.com/zlpxiaokeai/img/raw/master/img/image-20210903145523286.png" alt="image-20210903145523286"></p>
-<p>然后执行如下命令初始化，执行以下命令初始化博客。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
-
-<p>分别执行下面命令，启动服务。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo cl #清除缓存文件 (db.json) 和已生成的静态文件 (public)</span><br><span class="line">hexo g  #生成静态网站文件</span><br><span class="line">hexo s  #启动服务器。默认情况下，访问网址为： http://localhost:4000/</span><br></pre></td></tr></table></figure>
-
-<p>默认是4000端口，在浏览器输入<a href="http://localhost:4000就可以访问默认博客了">http://localhost:4000就可以访问默认博客了</a></p>
-<p>到此默认的hexo博客就建立好了,但是大家一般会使用其他主题来使得博客更加好看,下面介绍next主题.</p>
-<p>更多hexo命令解释请看<a href="https://hexo.io/zh-cn/docs/commands.html#server">https://hexo.io/zh-cn/docs/commands.html#server</a></p>
-<h1 id="next主题"><a href="#next主题" class="headerlink" title="next主题"></a>next主题</h1><p>使用如下git指令下载NexT最新的主题文件(注意要在博客目录下运行cmd窗口执行如下命令)</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/theme-next/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
-
-<p>现在Hexo中有两份主要的配置文件，其名称都是_config.yml。 其中，一份位于站点根目录下，主要包含Hexo本身的配置；另一份位于next主题目录下，主要用于配置主题相关的选项。将前者称为站点配置文件， 后者称为主题配置文件。</p>
-<h2 id="站点文件配置"><a href="#站点文件配置" class="headerlink" title="站点文件配置"></a>站点文件配置</h2><p>找到站点的_config.yml文件,修改其中如下的值。</p>
-<p><img src="https://gitee.com/zlpxiaokeai/img/raw/master/img/image-20210903154538650.png" alt="image-20210903154538650"></p>
-<table>
-<thead>
-<tr>
-<th><code>title</code></th>
-<th>网站标题</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>subtitle</code></td>
-<td>网站副标题</td>
-</tr>
-<tr>
-<td><code>description</code></td>
-<td>网站描述</td>
-</tr>
-<tr>
-<td><code>keywords</code></td>
-<td>网站的关键词。支持多个关键词。</td>
-</tr>
-<tr>
-<td><code>author</code></td>
-<td>您的名字</td>
-</tr>
-<tr>
-<td><code>language</code></td>
-<td>网站使用的语言。对于简体中文用户来说，使用不同的主题可能需要设置成不同的值，请参考你的主题的文档自行设置，常见的有 <code>zh-Hans</code>和 <code>zh-CN</code>。</td>
-</tr>
-<tr>
-<td><code>timezone</code></td>
-<td>网站时区。Hexo 默认使用您电脑的时区。请参考 <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">时区列表</a> 进行设置，如 <code>America/New_York</code>, <code>Japan</code>, 和 <code>UTC</code> 。一般的，对于中国大陆地区可以使用 <code>Asia/Shanghai</code>。</td>
-</tr>
-</tbody></table>
-<h2 id="站点文件配置-1"><a href="#站点文件配置-1" class="headerlink" title="站点文件配置"></a>站点文件配置</h2><h3 id="菜单项"><a href="#菜单项" class="headerlink" title="菜单项"></a>菜单项</h3><p>菜单配置包括三个部分，第一是菜单项（名称和链接），第二是菜单项的显示文本，第三是菜单项对应的图标。 </p>
-<p><img src="https://gitee.com/zlpxiaokeai/img/raw/master/img/image-20210903154935622.png" alt="image-20210903154935622"></p>
-<h3 id="初始化对应的Menu文件夹"><a href="#初始化对应的Menu文件夹" class="headerlink" title="初始化对应的Menu文件夹"></a>初始化对应的Menu文件夹</h3><p>配置完菜单之后,还要在终端中输入（前提在<strong>Hexo</strong>文件路径下）：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo new page &quot;categories&quot;</span><br></pre></td></tr></table></figure>
-
-<p>否则会出现</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Cannot GET/xxx 错误</span><br></pre></td></tr></table></figure>
-
-<p>同时还要在<code>blog/source/categories</code>中<strong>index.md</strong>文件，添加<code>type: categories</code>，</p>
-<p><img src="https://gitee.com/zlpxiaokeai/img/raw/master/img/image-20210903155908305.png" alt="image-20210903155908305"></p>
-<p>其他菜单项目也同理创建。</p>
-<h3 id="next四种主题"><a href="#next四种主题" class="headerlink" title="next四种主题"></a>next四种主题</h3><figure class="highlight json"><table><tr><td class="code"><pre><span class="line"># Schemes</span><br><span class="line">#scheme: Muse</span><br><span class="line">scheme: Mist</span><br><span class="line">#scheme: Pisces</span><br><span class="line">#scheme: Gemini</span><br></pre></td></tr></table></figure>
-
-<p>选择其中一个就行,我选择的是Mist</p>
-<h3 id="设置头像"><a href="#设置头像" class="headerlink" title="设置头像"></a>设置头像</h3><p>编辑 <strong>主题配置文件</strong>， 修改字段 <code>avatar</code>， 值设置成头像的链接地址，图片可以传到next/source/uploads目录下。</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">avatar: /uploads/avatar.jpg</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="字数统计-阅读时长"><a href="#字数统计-阅读时长" class="headerlink" title="字数统计+阅读时长"></a>字数统计+阅读时长</h3><ol>
-<li>安装hexo-wordcount</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm i --save hexo-wordcount</span><br></pre></td></tr></table></figure>
-
 <ol>
-<li>配置主题文件</li>
+<li>this.getClass().getResource（””）<br>得到的是当前类class文件的URI目录。不包括自己！<br>如：file：/D：/workspace/jbpmtest3/bin/com/test/</li>
+<li>this.getClass().getResource（”/“）<br>得到的是当前的classpath的 绝对URI路径  。<br>如：file：/D：/workspace/jbpmtest3/bin/</li>
+<li>this.getClass()  . getClassLoader().getResource（””）<br>得到的也是当前ClassPath的 绝对URI路径  。<br>如：file：/D：/workspace/jbpmtest3/bin/</li>
+<li>ClassLoader.getSystemResource（””）<br>得到的也是当前ClassPath的 绝对URI路径  。<br>如：file：/D：/workspace/jbpmtest3/bin/</li>
+<li>Thread.currentThread().getContextClassLoader ().getResource（””）<br>得到的也是当前ClassPath的 绝对URI路径  。<br>如：file：/D：/workspace/jbpmtest3/bin/</li>
+<li>ServletActionContext.getServletContext().getRealPath(“/”)<br>Web应用程序  中，得到Web应用程序的根目录的绝对路径。这样，我们只需要提供相对于Web应用程序根目录的路径，就可以构建出定位资源的绝对路径。</li>
 </ol>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">post_wordcount:</span><br><span class="line">  item_text: <span class="literal">true</span></span><br><span class="line">  wordcount: <span class="literal">true</span></span><br><span class="line">  min2read: <span class="literal">true</span></span><br><span class="line">  totalcount: <span class="literal">true</span></span><br><span class="line">  separated_meta: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 编译后，项目根路径，写法1</span></span><br><span class="line">String url1 = ConnectionTest.class.getClassLoader().getResource(<span class="string">&quot;&quot;</span>).toString();</span><br><span class="line">System.out.println(url1);</span><br><span class="line"><span class="comment">// 编译后，项目根路径，写法2</span></span><br><span class="line">String url2 = ConnectionTest.class.getResource(<span class="string">&quot;/&quot;</span>).toString();</span><br><span class="line">System.out.println(url2);</span><br><span class="line"><span class="comment">// 编译后，文件根路径</span></span><br><span class="line">String url3 = ConnectionTest.class.getResource(<span class="string">&quot;&quot;</span>).toString();</span><br><span class="line">System.out.println(url3);</span><br><span class="line"><span class="comment">//结果</span></span><br><span class="line">file:/E:/code/jdbc/target/test-classes/</span><br><span class="line">file:/E:/code/jdbc/target/test-classes/</span><br><span class="line">file:/E:/code/jdbc/target/test-classes/org/example/</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<h3 id="阅读更多"><a href="#阅读更多" class="headerlink" title="阅读更多"></a>阅读更多</h3><p>在首页显示一篇文章的部分内容，并提供一个链接跳转到全文页面是一个常见的需求。在xxx.md的文章中使用</p>
-<p>使用下面标签即可，在标签之前的会在主页显示，标签之后的则在点击阅读更多之后显示。</p>
-<p><img src="https://gitee.com/zlpxiaokeai/img/raw/master/img/image-20210903160122768.png" alt="image-20210903160122768"></p>
-<h1 id="修改文章目录导航"><a href="#修改文章目录导航" class="headerlink" title="修改文章目录导航"></a>修改文章目录导航</h1><h2 id="取消数字编号"><a href="#取消数字编号" class="headerlink" title="取消数字编号"></a>取消数字编号</h2><p>在主题配置文件中关闭目录中的数字编号：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">themes\next\_config.ymltoc:</span><br><span class="line">  number: false  # 关闭目录中的数字编号</span><br></pre></td></tr></table></figure>
-
-<h2 id="展开全部目录层级"><a href="#展开全部目录层级" class="headerlink" title="展开全部目录层级"></a>展开全部目录层级</h2><p>默认情况下文章的多级目录是折叠的，点击才会触发下级菜单的展开，并且并且同时只能展开一个目录分支，这会造成在点击不同目录标题的时候目录跳来跳去。如果你想实现默认展开全部目录的功能，可以在自定义样式文件中添加以下代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">themes\next\source\css\_custom\custom.styl//TOC目录默认全部展开</span><br><span class="line">.post-toc .nav .nav-child &#123;</span><br><span class="line">  display: block;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="默认展开两级目录"><a href="#默认展开两级目录" class="headerlink" title="默认展开两级目录"></a>默认展开两级目录</h2><p>通常文章内会出现多级标题，对应的目录里就会有多级导航出现，这时候一些原本你不希望出现的次要标题也会在目录中出现并且无法折叠。可以通过以下样式实现默认只展开两级目录，这样以来就通过一个折中的方案完美解决了目录折叠的问题。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">themes\next\source\css\_custom\custom.styl//TOC目录默认展开两级</span><br><span class="line">.post-toc .nav .nav-level-1&gt;.nav-child &#123;</span><br><span class="line">  display: block;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="只显示两级目录"><a href="#只显示两级目录" class="headerlink" title="只显示两级目录"></a>只显示两级目录</h2><p>如果你根本不想让三级及以上的标题出现 TOC 导航目录中，可以考虑在自定义样式文件中添加以下代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">themes\next\source\css\_custom\custom.styl//TOC目录默认只显示两级目录</span><br><span class="line">.nav-level-2 &gt; .nav-child &#123;</span><br><span class="line">  display: none !important;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="主动隐藏文章目录"><a href="#主动隐藏文章目录" class="headerlink" title="主动隐藏文章目录"></a>主动隐藏文章目录</h2><p>如果你写了一篇并不算长的文章，没有层层嵌套的多级目录结构，此时侧边的文章目录空荡荡的就有点鸡肋了。修改侧边栏布局模板中的相关逻辑代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">themes\next\layout\_macro\sidebar.swig- &#123;% set display_toc = is_post and theme.toc.enable %&#125;</span><br><span class="line">+ &#123;% set display_toc = is_post and theme.toc.enable and not page.hide_toc %&#125;</span><br></pre></td></tr></table></figure>
-
-<p>然后就可在 Front-Matter 中设定变量 hide_toc 用于控制是否隐藏侧边目录</p>
-<h1 id="Mist外观下，修改侧边栏在左边"><a href="#Mist外观下，修改侧边栏在左边" class="headerlink" title="Mist外观下，修改侧边栏在左边"></a>Mist外观下，修改侧边栏在左边</h1><p>参考：</p>
-<ul>
-<li><p><a href="https://blog.fish-404.icu/Blog-adjust-sidebar-nextmist-left/">Blog-调整NexT主题Mist外观侧边栏在左</a></p>
-</li>
-<li><p><a href="http://mashirosorata.vicp.io/HEXO-NEXT%E4%B8%BB%E9%A2%98%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE.html">HEXO+NEXT主题个性化配置|SORA</a></p>
-</li>
-</ul>
-<p>在NexT主题的Mist外观下，侧边栏默认在右，而只有在<code>Pisces</code>，<code>Gemini</code>这两种外观下才可以通过<code>_config.yml</code>直接修改选择左侧或是右侧。</p>
-<p>在此过程中需要修改如下几个文件：</p>
-<ul>
-<li>sidebar.styl</li>
-<li>sidebar-toggle.styl</li>
-<li>back-to-top.styl</li>
-<li>motion.js</li>
-</ul>
-<p> <strong>1.sidebar.styl</strong></p>
-<p>路径：<code>.\themes\next\source\css\_common\components\sidebar\</code><br>将此文件的第3行<code>right</code>改为<code>left</code></p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.sidebar</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: fixed;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">bottom</span>: <span class="number">0</span>;</span><br></pre></td></tr></table></figure>
-
-<p><strong>2.sidebar-toggle.styl</strong></p>
-<p>路径：<code>.\themes\next\source\css\_common\components\sidebar\</code><br>同样将第3行冒号前的<code>right</code>改为<code>left</code></p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="attribute">left</span>: $b2t-position-right;</span><br></pre></td></tr></table></figure>
-
-<p><strong>3.back-to-top.styl</strong></p>
-<p>路径：<code>.\themes\next\source\css\_common\components\</code><br>将第5行冒号前的<code>right</code>改为<code>left</code></p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="attribute">left</span>: $b2t-position-right;</span><br></pre></td></tr></table></figure>
-
-<p><strong>4.motion.js</strong></p>
-<p>路径：<code>.\themes\next\source\js\src\motion.js</code><br>利用搜索功能找到改文档中的<code>paddingRight</code>字段，将<code>paddingRight</code>改为<code>paddingLeft</code>(共两处)。</p>
-<p>重新部署即可完成侧边栏在左的设置。</p>
-<p><strong>修改窗口缩小bug</strong></p>
-<p>仅使用上面的方案情况下，如果侧边栏的设置是展开状态，在浏览器窗口缩小时会导致侧边栏仍然存在且占据相当大的位置。做以下调整。</p>
-<p>找到<code>./themes/source/js/src/motion.js</code>文件，在<code>$(document).ready(function ()&#123;&#125;)</code>内添加内容：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">window</span>.onload=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	    <span class="keyword">var</span> bwol=<span class="built_in">document</span>.body.offsetWidth;</span><br><span class="line">	    <span class="keyword">if</span>(bwol &lt; <span class="number">975</span>)&#123;</span><br><span class="line">		$(<span class="string">&#x27;aside#sidebar&#x27;</span>).css(<span class="string">&quot;display&quot;</span>,<span class="string">&quot;none&quot;</span>);</span><br><span class="line">		$(<span class="string">&#x27;body&#x27;</span>).css(<span class="string">&quot;paddingLeft&quot;</span>,<span class="string">&quot;0px&quot;</span>);</span><br><span class="line">	    &#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">window</span>.onresize = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	    <span class="keyword">var</span> bwos=<span class="built_in">document</span>.body.offsetWidth;</span><br><span class="line">	    bwos &lt; <span class="number">975</span> &amp;&amp; $(<span class="string">&#x27;body&#x27;</span>).velocity(<span class="string">&#x27;stop&#x27;</span>).velocity(&#123;<span class="attr">paddingLeft</span>: <span class="number">0</span>&#125;,<span class="number">0</span>);</span><br><span class="line">	    <span class="keyword">if</span>($(<span class="string">&#x27;aside#sidebar&#x27;</span>).css(<span class="string">&#x27;display&#x27;</span>) != <span class="string">&#x27;none&#x27;</span> &amp;&amp; $(<span class="string">&#x27;aside#sidebar&#x27;</span>).css(<span class="string">&#x27;width&#x27;</span>)!=<span class="string">&#x27;0px&#x27;</span>)</span><br><span class="line">		$(<span class="string">&#x27;body&#x27;</span>).velocity(<span class="string">&#x27;stop&#x27;</span>).velocity(&#123;<span class="attr">paddingLeft</span>: <span class="number">350</span>&#125;,<span class="number">0</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	   NexT.motion = &#123;&#125;;</span><br><span class="line">	   </span><br><span class="line">	   ...</span><br></pre></td></tr></table></figure>
-
-<h1 id="Hexo博客显示图片办法"><a href="#Hexo博客显示图片办法" class="headerlink" title="Hexo博客显示图片办法"></a>Hexo博客显示图片办法</h1><h2 id="方法一-使用typora-Picgo-gitee"><a href="#方法一-使用typora-Picgo-gitee" class="headerlink" title="方法一 使用typora+Picgo+gitee"></a>方法一 使用typora+Picgo+gitee</h2><a href="/2021/09/03/Typora+PicGo-Core%E5%BB%BA%E7%AB%8B%E5%9B%BE%E5%BA%8A/" title="使用typora+Picgo+gitee 建立图床,显示hexo博客中图片">使用typora+Picgo+gitee 建立图床,显示hexo博客中图片</a>
-
-<h2 id="方法二-建立同名文件夹"><a href="#方法二-建立同名文件夹" class="headerlink" title="方法二   建立同名文件夹"></a>方法二   建立同名文件夹</h2><ol>
-<li><p>修改博客配置。</p>
-<p>修改博客根目录中<code>_config.yml</code>文件的配置项<code>post_asset_folder</code>为<code>true</code>：</p>
-<p>2.通过<code>hexo new xxx</code>新建博客后，会产生一个和文件同名的文件夹。(或者自己建立一个xxx.md文件和xxx文件夹)</p>
-</li>
-</ol>
-<p><img src="https://gitee.com/zlpxiaokeai/img/raw/master/img/image-20210903145943342.png" alt="image-20210903145943342"></p>
-<p>在博客根目录中下使用npm安装插件：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install https://github.com/CodeFalling/hexo-asset-image --save</span><br></pre></td></tr></table></figure>
-
-<p>当文章需要添加图片时，将需要添加的图片放入同名的文件夹中，使用相对位置索引到该图片,如下所示.</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">![示例](./xxxx/a.png)</span><br></pre></td></tr></table></figure>
-
-<h1 id="站内文章引用"><a href="#站内文章引用" class="headerlink" title="站内文章引用"></a>站内文章引用</h1><p>在写文章的过程中，有时候需要引用站内的其他文章。可以通过内置的标签插件的语法<code>post_link</code>来实现引用。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% post_link 文章文件名（不要后缀） 文章标题（可选） %&#125;</span><br></pre></td></tr></table></figure>
-
-<p> 引用 xxx.md</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% post_link xxx %&#125;</span><br></pre></td></tr></table></figure>
-
-<p>或者</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% post_link xxx 要显示的内容 %&#125;</span><br></pre></td></tr></table></figure>
-
-<p>要显示的内容不写,默认显示标题</p>
-<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><h2 id="next5中文目录点击无法跳转问题"><a href="#next5中文目录点击无法跳转问题" class="headerlink" title="next5中文目录点击无法跳转问题"></a>next5中文目录点击无法跳转问题</h2><p><strong>解决方案</strong></p>
-<p>这个错误很明显，因为控制台已经告诉我错误代码在 <code>post-details.js</code>里了，顺着提示找到 <code>themes\next\source\js\src\post-details.js</code>，找到第 73 行为目录绑定点击事件的方法，会看到：</p>
-<p>[<img src="https://gitee.com/zlpxiaokeai/img/raw/master/img/image-20201217170155109.png" alt="image-20201217170155109"></p>
-<p>添加如下代码即可:</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 对获取到的url进行重编码</span></span><br><span class="line">targetSelector = <span class="built_in">decodeURI</span>(<span class="built_in">this</span>.getAttribute(<span class="string">&#x27;href&#x27;</span>))</span><br></pre></td></tr></table></figure>
-
-<p>然后 <code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo s</code> 重新跑一下，发现目录就正常了。</p>
 ]]></content>
       <categories>
-        <category>博客</category>
-        <category>hexo</category>
+        <category>java</category>
       </categories>
       <tags>
-        <tag>博客</tag>
-        <tag>hexo</tag>
+        <tag>java</tag>
       </tags>
   </entry>
   <entry>
@@ -1592,6 +1415,207 @@
       </categories>
       <tags>
         <tag>jdbc</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>搭建自己的个人博客</title>
+    <url>/2021/09/01/%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<p>用hexo和github搭建自己的个人博客</p>
+<span id="more"></span>
+
+
+
+<h1 id="环境安装"><a href="#环境安装" class="headerlink" title="环境安装"></a>环境安装</h1><ol>
+<li>git</li>
+<li>node.js</li>
+<li>hexo</li>
+</ol>
+<h2 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h2><p>直接在点击下面链接下载安装。然后按照步骤安装即可。</p>
+<p><a href="https://git-scm.com/">https://git-scm.com/</a></p>
+<h2 id="安装node-js"><a href="#安装node-js" class="headerlink" title="安装node.js"></a>安装node.js</h2><p>同样点击下面链接下载安装。然后按照步骤安装即可。</p>
+<p><a href="https://nodejs.org/en/download/">https://nodejs.org/en/download/</a></p>
+<h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><p>通过下面命令进行安装</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+
+<p>执行以下命令确认hexo已安装好，该命令会显示hexo的版本及依赖的包。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
+
+<p>如果安装好则会显示以下信息</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo-cli: 4.3.0</span><br><span class="line">os: win32 10.0.18362</span><br><span class="line">node: 16.8.0</span><br><span class="line">v8: 9.2.230.21-node.20</span><br><span class="line">uv: 1.42.0</span><br><span class="line">zlib: 1.2.11</span><br><span class="line">brotli: 1.0.9</span><br><span class="line">ares: 1.17.2</span><br><span class="line">modules: 93</span><br><span class="line">nghttp2: 1.42.0</span><br><span class="line">napi: 8</span><br><span class="line">llhttp: 6.0.2</span><br><span class="line">openssl: 1.1.1k+quic</span><br><span class="line">cldr: 39.0</span><br><span class="line">icu: 69.1</span><br><span class="line">tz: 2021a</span><br><span class="line">unicode: 13.0</span><br><span class="line">ngtcp2: 0.1.0-DEV</span><br><span class="line">nghttp3: 0.1.0-DEV</span><br></pre></td></tr></table></figure>
+
+<h1 id="hexo创建博客"><a href="#hexo创建博客" class="headerlink" title="hexo创建博客"></a>hexo创建博客</h1><p>创建一个空白文件夹blog，作为博客根目录，在该根目录下，运行cmd窗口.</p>
+<p>注意文件夹必须为空</p>
+<p><img src="https://gitee.com/zlpxiaokeai/img/raw/master/img/image-20210903145523286.png" alt="image-20210903145523286"></p>
+<p>然后执行如下命令初始化，执行以下命令初始化博客。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
+
+<p>分别执行下面命令，启动服务。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo cl #清除缓存文件 (db.json) 和已生成的静态文件 (public)</span><br><span class="line">hexo g  #生成静态网站文件</span><br><span class="line">hexo s  #启动服务器。默认情况下，访问网址为： http://localhost:4000/</span><br></pre></td></tr></table></figure>
+
+<p>默认是4000端口，在浏览器输入<a href="http://localhost:4000就可以访问默认博客了">http://localhost:4000就可以访问默认博客了</a></p>
+<p>到此默认的hexo博客就建立好了,但是大家一般会使用其他主题来使得博客更加好看,下面介绍next主题.</p>
+<p>更多hexo命令解释请看<a href="https://hexo.io/zh-cn/docs/commands.html#server">https://hexo.io/zh-cn/docs/commands.html#server</a></p>
+<h1 id="next主题"><a href="#next主题" class="headerlink" title="next主题"></a>next主题</h1><p>使用如下git指令下载NexT最新的主题文件(注意要在博客目录下运行cmd窗口执行如下命令)</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/theme-next/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
+
+<p>现在Hexo中有两份主要的配置文件，其名称都是_config.yml。 其中，一份位于站点根目录下，主要包含Hexo本身的配置；另一份位于next主题目录下，主要用于配置主题相关的选项。将前者称为站点配置文件， 后者称为主题配置文件。</p>
+<h2 id="站点文件配置"><a href="#站点文件配置" class="headerlink" title="站点文件配置"></a>站点文件配置</h2><p>找到站点的_config.yml文件,修改其中如下的值。</p>
+<p><img src="https://gitee.com/zlpxiaokeai/img/raw/master/img/image-20210903154538650.png" alt="image-20210903154538650"></p>
+<table>
+<thead>
+<tr>
+<th><code>title</code></th>
+<th>网站标题</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>subtitle</code></td>
+<td>网站副标题</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td>网站描述</td>
+</tr>
+<tr>
+<td><code>keywords</code></td>
+<td>网站的关键词。支持多个关键词。</td>
+</tr>
+<tr>
+<td><code>author</code></td>
+<td>您的名字</td>
+</tr>
+<tr>
+<td><code>language</code></td>
+<td>网站使用的语言。对于简体中文用户来说，使用不同的主题可能需要设置成不同的值，请参考你的主题的文档自行设置，常见的有 <code>zh-Hans</code>和 <code>zh-CN</code>。</td>
+</tr>
+<tr>
+<td><code>timezone</code></td>
+<td>网站时区。Hexo 默认使用您电脑的时区。请参考 <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">时区列表</a> 进行设置，如 <code>America/New_York</code>, <code>Japan</code>, 和 <code>UTC</code> 。一般的，对于中国大陆地区可以使用 <code>Asia/Shanghai</code>。</td>
+</tr>
+</tbody></table>
+<h2 id="站点文件配置-1"><a href="#站点文件配置-1" class="headerlink" title="站点文件配置"></a>站点文件配置</h2><h3 id="菜单项"><a href="#菜单项" class="headerlink" title="菜单项"></a>菜单项</h3><p>菜单配置包括三个部分，第一是菜单项（名称和链接），第二是菜单项的显示文本，第三是菜单项对应的图标。 </p>
+<p><img src="https://gitee.com/zlpxiaokeai/img/raw/master/img/image-20210903154935622.png" alt="image-20210903154935622"></p>
+<h3 id="初始化对应的Menu文件夹"><a href="#初始化对应的Menu文件夹" class="headerlink" title="初始化对应的Menu文件夹"></a>初始化对应的Menu文件夹</h3><p>配置完菜单之后,还要在终端中输入（前提在<strong>Hexo</strong>文件路径下）：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo new page &quot;categories&quot;</span><br></pre></td></tr></table></figure>
+
+<p>否则会出现</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Cannot GET/xxx 错误</span><br></pre></td></tr></table></figure>
+
+<p>同时还要在<code>blog/source/categories</code>中<strong>index.md</strong>文件，添加<code>type: categories</code>，</p>
+<p><img src="https://gitee.com/zlpxiaokeai/img/raw/master/img/image-20210903155908305.png" alt="image-20210903155908305"></p>
+<p>其他菜单项目也同理创建。</p>
+<h3 id="next四种主题"><a href="#next四种主题" class="headerlink" title="next四种主题"></a>next四种主题</h3><figure class="highlight json"><table><tr><td class="code"><pre><span class="line"># Schemes</span><br><span class="line">#scheme: Muse</span><br><span class="line">scheme: Mist</span><br><span class="line">#scheme: Pisces</span><br><span class="line">#scheme: Gemini</span><br></pre></td></tr></table></figure>
+
+<p>选择其中一个就行,我选择的是Mist</p>
+<h3 id="设置头像"><a href="#设置头像" class="headerlink" title="设置头像"></a>设置头像</h3><p>编辑 <strong>主题配置文件</strong>， 修改字段 <code>avatar</code>， 值设置成头像的链接地址，图片可以传到next/source/uploads目录下。</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">avatar: /uploads/avatar.jpg</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="字数统计-阅读时长"><a href="#字数统计-阅读时长" class="headerlink" title="字数统计+阅读时长"></a>字数统计+阅读时长</h3><ol>
+<li>安装hexo-wordcount</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm i --save hexo-wordcount</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>配置主题文件</li>
+</ol>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">post_wordcount:</span><br><span class="line">  item_text: <span class="literal">true</span></span><br><span class="line">  wordcount: <span class="literal">true</span></span><br><span class="line">  min2read: <span class="literal">true</span></span><br><span class="line">  totalcount: <span class="literal">true</span></span><br><span class="line">  separated_meta: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="阅读更多"><a href="#阅读更多" class="headerlink" title="阅读更多"></a>阅读更多</h3><p>在首页显示一篇文章的部分内容，并提供一个链接跳转到全文页面是一个常见的需求。在xxx.md的文章中使用</p>
+<p>使用下面标签即可，在标签之前的会在主页显示，标签之后的则在点击阅读更多之后显示。</p>
+<p><img src="https://gitee.com/zlpxiaokeai/img/raw/master/img/image-20210903160122768.png" alt="image-20210903160122768"></p>
+<h1 id="修改文章目录导航"><a href="#修改文章目录导航" class="headerlink" title="修改文章目录导航"></a>修改文章目录导航</h1><h2 id="取消数字编号"><a href="#取消数字编号" class="headerlink" title="取消数字编号"></a>取消数字编号</h2><p>在主题配置文件中关闭目录中的数字编号：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">themes\next\_config.ymltoc:</span><br><span class="line">  number: false  # 关闭目录中的数字编号</span><br></pre></td></tr></table></figure>
+
+<h2 id="展开全部目录层级"><a href="#展开全部目录层级" class="headerlink" title="展开全部目录层级"></a>展开全部目录层级</h2><p>默认情况下文章的多级目录是折叠的，点击才会触发下级菜单的展开，并且并且同时只能展开一个目录分支，这会造成在点击不同目录标题的时候目录跳来跳去。如果你想实现默认展开全部目录的功能，可以在自定义样式文件中添加以下代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">themes\next\source\css\_custom\custom.styl//TOC目录默认全部展开</span><br><span class="line">.post-toc .nav .nav-child &#123;</span><br><span class="line">  display: block;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="默认展开两级目录"><a href="#默认展开两级目录" class="headerlink" title="默认展开两级目录"></a>默认展开两级目录</h2><p>通常文章内会出现多级标题，对应的目录里就会有多级导航出现，这时候一些原本你不希望出现的次要标题也会在目录中出现并且无法折叠。可以通过以下样式实现默认只展开两级目录，这样以来就通过一个折中的方案完美解决了目录折叠的问题。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">themes\next\source\css\_custom\custom.styl//TOC目录默认展开两级</span><br><span class="line">.post-toc .nav .nav-level-1&gt;.nav-child &#123;</span><br><span class="line">  display: block;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="只显示两级目录"><a href="#只显示两级目录" class="headerlink" title="只显示两级目录"></a>只显示两级目录</h2><p>如果你根本不想让三级及以上的标题出现 TOC 导航目录中，可以考虑在自定义样式文件中添加以下代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">themes\next\source\css\_custom\custom.styl//TOC目录默认只显示两级目录</span><br><span class="line">.nav-level-2 &gt; .nav-child &#123;</span><br><span class="line">  display: none !important;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="主动隐藏文章目录"><a href="#主动隐藏文章目录" class="headerlink" title="主动隐藏文章目录"></a>主动隐藏文章目录</h2><p>如果你写了一篇并不算长的文章，没有层层嵌套的多级目录结构，此时侧边的文章目录空荡荡的就有点鸡肋了。修改侧边栏布局模板中的相关逻辑代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">themes\next\layout\_macro\sidebar.swig- &#123;% set display_toc = is_post and theme.toc.enable %&#125;</span><br><span class="line">+ &#123;% set display_toc = is_post and theme.toc.enable and not page.hide_toc %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后就可在 Front-Matter 中设定变量 hide_toc 用于控制是否隐藏侧边目录</p>
+<h1 id="Mist外观下，修改侧边栏在左边"><a href="#Mist外观下，修改侧边栏在左边" class="headerlink" title="Mist外观下，修改侧边栏在左边"></a>Mist外观下，修改侧边栏在左边</h1><p>参考：</p>
+<ul>
+<li><p><a href="https://blog.fish-404.icu/Blog-adjust-sidebar-nextmist-left/">Blog-调整NexT主题Mist外观侧边栏在左</a></p>
+</li>
+<li><p><a href="http://mashirosorata.vicp.io/HEXO-NEXT%E4%B8%BB%E9%A2%98%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE.html">HEXO+NEXT主题个性化配置|SORA</a></p>
+</li>
+</ul>
+<p>在NexT主题的Mist外观下，侧边栏默认在右，而只有在<code>Pisces</code>，<code>Gemini</code>这两种外观下才可以通过<code>_config.yml</code>直接修改选择左侧或是右侧。</p>
+<p>在此过程中需要修改如下几个文件：</p>
+<ul>
+<li>sidebar.styl</li>
+<li>sidebar-toggle.styl</li>
+<li>back-to-top.styl</li>
+<li>motion.js</li>
+</ul>
+<p> <strong>1.sidebar.styl</strong></p>
+<p>路径：<code>.\themes\next\source\css\_common\components\sidebar\</code><br>将此文件的第3行<code>right</code>改为<code>left</code></p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.sidebar</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: fixed;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">bottom</span>: <span class="number">0</span>;</span><br></pre></td></tr></table></figure>
+
+<p><strong>2.sidebar-toggle.styl</strong></p>
+<p>路径：<code>.\themes\next\source\css\_common\components\sidebar\</code><br>同样将第3行冒号前的<code>right</code>改为<code>left</code></p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="attribute">left</span>: $b2t-position-right;</span><br></pre></td></tr></table></figure>
+
+<p><strong>3.back-to-top.styl</strong></p>
+<p>路径：<code>.\themes\next\source\css\_common\components\</code><br>将第5行冒号前的<code>right</code>改为<code>left</code></p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="attribute">left</span>: $b2t-position-right;</span><br></pre></td></tr></table></figure>
+
+<p><strong>4.motion.js</strong></p>
+<p>路径：<code>.\themes\next\source\js\src\motion.js</code><br>利用搜索功能找到改文档中的<code>paddingRight</code>字段，将<code>paddingRight</code>改为<code>paddingLeft</code>(共两处)。</p>
+<p>重新部署即可完成侧边栏在左的设置。</p>
+<p><strong>修改窗口缩小bug</strong></p>
+<p>仅使用上面的方案情况下，如果侧边栏的设置是展开状态，在浏览器窗口缩小时会导致侧边栏仍然存在且占据相当大的位置。做以下调整。</p>
+<p>找到<code>./themes/source/js/src/motion.js</code>文件，在<code>$(document).ready(function ()&#123;&#125;)</code>内添加内容：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">window</span>.onload=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	    <span class="keyword">var</span> bwol=<span class="built_in">document</span>.body.offsetWidth;</span><br><span class="line">	    <span class="keyword">if</span>(bwol &lt; <span class="number">975</span>)&#123;</span><br><span class="line">		$(<span class="string">&#x27;aside#sidebar&#x27;</span>).css(<span class="string">&quot;display&quot;</span>,<span class="string">&quot;none&quot;</span>);</span><br><span class="line">		$(<span class="string">&#x27;body&#x27;</span>).css(<span class="string">&quot;paddingLeft&quot;</span>,<span class="string">&quot;0px&quot;</span>);</span><br><span class="line">	    &#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">window</span>.onresize = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	    <span class="keyword">var</span> bwos=<span class="built_in">document</span>.body.offsetWidth;</span><br><span class="line">	    bwos &lt; <span class="number">975</span> &amp;&amp; $(<span class="string">&#x27;body&#x27;</span>).velocity(<span class="string">&#x27;stop&#x27;</span>).velocity(&#123;<span class="attr">paddingLeft</span>: <span class="number">0</span>&#125;,<span class="number">0</span>);</span><br><span class="line">	    <span class="keyword">if</span>($(<span class="string">&#x27;aside#sidebar&#x27;</span>).css(<span class="string">&#x27;display&#x27;</span>) != <span class="string">&#x27;none&#x27;</span> &amp;&amp; $(<span class="string">&#x27;aside#sidebar&#x27;</span>).css(<span class="string">&#x27;width&#x27;</span>)!=<span class="string">&#x27;0px&#x27;</span>)</span><br><span class="line">		$(<span class="string">&#x27;body&#x27;</span>).velocity(<span class="string">&#x27;stop&#x27;</span>).velocity(&#123;<span class="attr">paddingLeft</span>: <span class="number">350</span>&#125;,<span class="number">0</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	   NexT.motion = &#123;&#125;;</span><br><span class="line">	   </span><br><span class="line">	   ...</span><br></pre></td></tr></table></figure>
+
+<h1 id="Hexo博客显示图片办法"><a href="#Hexo博客显示图片办法" class="headerlink" title="Hexo博客显示图片办法"></a>Hexo博客显示图片办法</h1><h2 id="方法一-使用typora-Picgo-gitee"><a href="#方法一-使用typora-Picgo-gitee" class="headerlink" title="方法一 使用typora+Picgo+gitee"></a>方法一 使用typora+Picgo+gitee</h2><a href="/2021/09/03/Typora+PicGo-Core%E5%BB%BA%E7%AB%8B%E5%9B%BE%E5%BA%8A/" title="使用typora+Picgo+gitee 建立图床,显示hexo博客中图片">使用typora+Picgo+gitee 建立图床,显示hexo博客中图片</a>
+
+<h2 id="方法二-建立同名文件夹"><a href="#方法二-建立同名文件夹" class="headerlink" title="方法二   建立同名文件夹"></a>方法二   建立同名文件夹</h2><ol>
+<li><p>修改博客配置。</p>
+<p>修改博客根目录中<code>_config.yml</code>文件的配置项<code>post_asset_folder</code>为<code>true</code>：</p>
+<p>2.通过<code>hexo new xxx</code>新建博客后，会产生一个和文件同名的文件夹。(或者自己建立一个xxx.md文件和xxx文件夹)</p>
+</li>
+</ol>
+<p><img src="https://gitee.com/zlpxiaokeai/img/raw/master/img/image-20210903145943342.png" alt="image-20210903145943342"></p>
+<p>在博客根目录中下使用npm安装插件：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install https://github.com/CodeFalling/hexo-asset-image --save</span><br></pre></td></tr></table></figure>
+
+<p>当文章需要添加图片时，将需要添加的图片放入同名的文件夹中，使用相对位置索引到该图片,如下所示.</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">![示例](./xxxx/a.png)</span><br></pre></td></tr></table></figure>
+
+<h1 id="站内文章引用"><a href="#站内文章引用" class="headerlink" title="站内文章引用"></a>站内文章引用</h1><p>在写文章的过程中，有时候需要引用站内的其他文章。可以通过内置的标签插件的语法<code>post_link</code>来实现引用。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% post_link 文章文件名（不要后缀） 文章标题（可选） %&#125;</span><br></pre></td></tr></table></figure>
+
+<p> 引用 xxx.md</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% post_link xxx %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>或者</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% post_link xxx 要显示的内容 %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>要显示的内容不写,默认显示标题</p>
+<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><h2 id="next5中文目录点击无法跳转问题"><a href="#next5中文目录点击无法跳转问题" class="headerlink" title="next5中文目录点击无法跳转问题"></a>next5中文目录点击无法跳转问题</h2><p><strong>解决方案</strong></p>
+<p>这个错误很明显，因为控制台已经告诉我错误代码在 <code>post-details.js</code>里了，顺着提示找到 <code>themes\next\source\js\src\post-details.js</code>，找到第 73 行为目录绑定点击事件的方法，会看到：</p>
+<p>[<img src="https://gitee.com/zlpxiaokeai/img/raw/master/img/image-20201217170155109.png" alt="image-20201217170155109"></p>
+<p>添加如下代码即可:</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 对获取到的url进行重编码</span></span><br><span class="line">targetSelector = <span class="built_in">decodeURI</span>(<span class="built_in">this</span>.getAttribute(<span class="string">&#x27;href&#x27;</span>))</span><br></pre></td></tr></table></figure>
+
+<p>然后 <code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo s</code> 重新跑一下，发现目录就正常了。</p>
+]]></content>
+      <categories>
+        <category>博客</category>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>博客</tag>
+        <tag>hexo</tag>
       </tags>
   </entry>
   <entry>
