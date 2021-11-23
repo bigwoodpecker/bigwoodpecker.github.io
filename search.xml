@@ -18,16 +18,6 @@
       </categories>
   </entry>
   <entry>
-    <title>Residual Correlation in Graph Neural Network Regression</title>
-    <url>/2021/09/08/Residual-Correlation-in-Graph-Neural-Network-Regression/</url>
-    <content><![CDATA[<h2 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h2><p>​        图神经网络将每个顶点的邻域特征转换为顶点的向量表示。然后，每个顶点的表示被独立地用于预测它的标签。这个标准的处理方式隐含地假设顶点标签在给定其邻域特征的情况下是有条件独立的。然而，这是一个强烈的假设，我们表明，在许多真实的图数据集上，这是远远不正确的。<strong>在回归任务中，我们发现这种条件独立假设严重限制了预测能力</strong>。这并不奇怪，因为传统的基于图的半监督学习方法，如标签传播，通过明确地建模预测结果的相关性，它是以相反的方式工作。</p>
-<p>​        在这里，我们用一个可解释和有效的框架来解决这个问题，这个框架可以通过简单地利用回归残差中的相关结构来改进任何图神经网络的结构。<strong>具体地说，我们用参数化的多元高斯模型对残差在顶点上的联合分布进行建模，并通过最大化观测标签的边际似然函数来估计参数</strong>。我们的框架实现了比竞争基线更高的精度，学习到的参数可以解释为连接顶点之间的相关性强度。此外，我们开发了低方差、无偏模型参数估计的线性时间算法，允许我们扩展到大型网络。我们还提供了我们方法的一个基本版本，该版本对相关结构做了更强的假设，但实现起来很轻松，通常以最小的开销获得很大的实际性能。</p>
-]]></content>
-      <categories>
-        <category>图神经网络</category>
-      </categories>
-  </entry>
-  <entry>
     <title>MySQL</title>
     <url>/2021/11/04/MySQL/</url>
     <content><![CDATA[<h1 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h1><p>什么是数据库？什么是数据库管理系统？什么是SQL？他们之间的关系是什么？</p>
@@ -193,6 +183,16 @@
       <tags>
         <tag>MySQL</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Residual Correlation in Graph Neural Network Regression</title>
+    <url>/2021/09/08/Residual-Correlation-in-Graph-Neural-Network-Regression/</url>
+    <content><![CDATA[<h2 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h2><p>​        图神经网络将每个顶点的邻域特征转换为顶点的向量表示。然后，每个顶点的表示被独立地用于预测它的标签。这个标准的处理方式隐含地假设顶点标签在给定其邻域特征的情况下是有条件独立的。然而，这是一个强烈的假设，我们表明，在许多真实的图数据集上，这是远远不正确的。<strong>在回归任务中，我们发现这种条件独立假设严重限制了预测能力</strong>。这并不奇怪，因为传统的基于图的半监督学习方法，如标签传播，通过明确地建模预测结果的相关性，它是以相反的方式工作。</p>
+<p>​        在这里，我们用一个可解释和有效的框架来解决这个问题，这个框架可以通过简单地利用回归残差中的相关结构来改进任何图神经网络的结构。<strong>具体地说，我们用参数化的多元高斯模型对残差在顶点上的联合分布进行建模，并通过最大化观测标签的边际似然函数来估计参数</strong>。我们的框架实现了比竞争基线更高的精度，学习到的参数可以解释为连接顶点之间的相关性强度。此外，我们开发了低方差、无偏模型参数估计的线性时间算法，允许我们扩展到大型网络。我们还提供了我们方法的一个基本版本，该版本对相关结构做了更强的假设，但实现起来很轻松，通常以最小的开销获得很大的实际性能。</p>
+]]></content>
+      <categories>
+        <category>图神经网络</category>
+      </categories>
   </entry>
   <entry>
     <title>Typora+PicGo-Core+gitee建立图床</title>
@@ -415,30 +415,6 @@
       </categories>
       <tags>
         <tag>命令</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>得到需要资源的绝对路径方法</title>
-    <url>/2021/11/23/%E5%BE%97%E5%88%B0%E9%9C%80%E8%A6%81%E8%B5%84%E6%BA%90%E7%9A%84%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84%E6%96%B9%E6%B3%95/</url>
-    <content><![CDATA[<h1 id="得到需要资源的绝对路径方法"><a href="#得到需要资源的绝对路径方法" class="headerlink" title="得到需要资源的绝对路径方法"></a>得到需要资源的绝对路径方法</h1><p>下面是一些得到classpath和当前类的绝对路径的一些方法。你可能需要使用其中的一些方法来得到你需要的资源的绝对路径。</p>
-<span id="more"></span>
-
-<ol>
-<li>this.getClass().getResource（””）<br>得到的是当前类class文件的URI目录。不包括自己！<br>如：file：/D：/workspace/jbpmtest3/bin/com/test/</li>
-<li>this.getClass().getResource（”/“）<br>得到的是当前的classpath的 绝对URI路径  。<br>如：file：/D：/workspace/jbpmtest3/bin/</li>
-<li>this.getClass()  . getClassLoader().getResource（””）<br>得到的也是当前ClassPath的 绝对URI路径  。<br>如：file：/D：/workspace/jbpmtest3/bin/</li>
-<li>ClassLoader.getSystemResource（””）<br>得到的也是当前ClassPath的 绝对URI路径  。<br>如：file：/D：/workspace/jbpmtest3/bin/</li>
-<li>Thread.currentThread().getContextClassLoader ().getResource（””）<br>得到的也是当前ClassPath的 绝对URI路径  。<br>如：file：/D：/workspace/jbpmtest3/bin/</li>
-<li>ServletActionContext.getServletContext().getRealPath(“/”)<br>Web应用程序  中，得到Web应用程序的根目录的绝对路径。这样，我们只需要提供相对于Web应用程序根目录的路径，就可以构建出定位资源的绝对路径。</li>
-</ol>
-<h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 编译后，项目根路径，写法1</span></span><br><span class="line">String url1 = ConnectionTest.class.getClassLoader().getResource(<span class="string">&quot;&quot;</span>).toString();</span><br><span class="line">System.out.println(url1);</span><br><span class="line"><span class="comment">// 编译后，项目根路径，写法2</span></span><br><span class="line">String url2 = ConnectionTest.class.getResource(<span class="string">&quot;/&quot;</span>).toString();</span><br><span class="line">System.out.println(url2);</span><br><span class="line"><span class="comment">// 编译后，文件根路径</span></span><br><span class="line">String url3 = ConnectionTest.class.getResource(<span class="string">&quot;&quot;</span>).toString();</span><br><span class="line">System.out.println(url3);</span><br><span class="line"><span class="comment">//结果</span></span><br><span class="line">file:/E:/code/jdbc/target/test-classes/</span><br><span class="line">file:/E:/code/jdbc/target/test-classes/</span><br><span class="line">file:/E:/code/jdbc/target/test-classes/org/example/</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>java</category>
-      </categories>
-      <tags>
-        <tag>java</tag>
       </tags>
   </entry>
   <entry>
@@ -1415,6 +1391,30 @@
       </categories>
       <tags>
         <tag>jdbc</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>得到需要资源的绝对路径方法</title>
+    <url>/2021/11/23/%E5%BE%97%E5%88%B0%E9%9C%80%E8%A6%81%E8%B5%84%E6%BA%90%E7%9A%84%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<h1 id="得到需要资源的绝对路径方法"><a href="#得到需要资源的绝对路径方法" class="headerlink" title="得到需要资源的绝对路径方法"></a>得到需要资源的绝对路径方法</h1><p>下面是一些得到classpath和当前类的绝对路径的一些方法。你可能需要使用其中的一些方法来得到你需要的资源的绝对路径。</p>
+<span id="more"></span>
+
+<ol>
+<li>this.getClass().getResource（””）<br>得到的是当前类class文件的URI目录。不包括自己！<br>如：file：/D：/workspace/jbpmtest3/bin/com/test/</li>
+<li>this.getClass().getResource（”/“）<br>得到的是当前的classpath的 绝对URI路径  。<br>如：file：/D：/workspace/jbpmtest3/bin/</li>
+<li>this.getClass()  . getClassLoader().getResource（””）<br>得到的也是当前ClassPath的 绝对URI路径  。<br>如：file：/D：/workspace/jbpmtest3/bin/</li>
+<li>ClassLoader.getSystemResource（””）<br>得到的也是当前ClassPath的 绝对URI路径  。<br>如：file：/D：/workspace/jbpmtest3/bin/</li>
+<li>Thread.currentThread().getContextClassLoader ().getResource（””）<br>得到的也是当前ClassPath的 绝对URI路径  。<br>如：file：/D：/workspace/jbpmtest3/bin/</li>
+<li>ServletActionContext.getServletContext().getRealPath(“/”)<br>Web应用程序  中，得到Web应用程序的根目录的绝对路径。这样，我们只需要提供相对于Web应用程序根目录的路径，就可以构建出定位资源的绝对路径。</li>
+</ol>
+<h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 编译后，项目根路径，写法1</span></span><br><span class="line">String url1 = ConnectionTest.class.getClassLoader().getResource(<span class="string">&quot;&quot;</span>).toString();</span><br><span class="line">System.out.println(url1);</span><br><span class="line"><span class="comment">// 编译后，项目根路径，写法2</span></span><br><span class="line">String url2 = ConnectionTest.class.getResource(<span class="string">&quot;/&quot;</span>).toString();</span><br><span class="line">System.out.println(url2);</span><br><span class="line"><span class="comment">// 编译后，文件根路径</span></span><br><span class="line">String url3 = ConnectionTest.class.getResource(<span class="string">&quot;&quot;</span>).toString();</span><br><span class="line">System.out.println(url3);</span><br><span class="line"><span class="comment">//结果</span></span><br><span class="line">file:/E:/code/jdbc/target/test-classes/</span><br><span class="line">file:/E:/code/jdbc/target/test-classes/</span><br><span class="line">file:/E:/code/jdbc/target/test-classes/org/example/</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
       </tags>
   </entry>
   <entry>
