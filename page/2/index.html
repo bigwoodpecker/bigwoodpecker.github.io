@@ -297,6 +297,197 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://zlpxiaokeai.gitee.io/2021/09/08/Residual-Correlation-in-Graph-Neural-Network-Regression/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/profile.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="南亦">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2021/09/08/Residual-Correlation-in-Graph-Neural-Network-Regression/" itemprop="url">Residual Correlation in Graph Neural Network Regression</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-09-08T16:41:06+08:00">
+                2021-09-08
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2021-09-08T20:02:21+08:00">
+                2021-09-08
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%9B%BE%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" itemprop="url" rel="index">
+                    <span itemprop="name">图神经网络</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  445字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h2><p>​        图神经网络将每个顶点的邻域特征转换为顶点的向量表示。然后，每个顶点的表示被独立地用于预测它的标签。这个标准的处理方式隐含地假设顶点标签在给定其邻域特征的情况下是有条件独立的。然而，这是一个强烈的假设，我们表明，在许多真实的图数据集上，这是远远不正确的。<strong>在回归任务中，我们发现这种条件独立假设严重限制了预测能力</strong>。这并不奇怪，因为传统的基于图的半监督学习方法，如标签传播，通过明确地建模预测结果的相关性，它是以相反的方式工作。</p>
+<p>​        在这里，我们用一个可解释和有效的框架来解决这个问题，这个框架可以通过简单地利用回归残差中的相关结构来改进任何图神经网络的结构。<strong>具体地说，我们用参数化的多元高斯模型对残差在顶点上的联合分布进行建模，并通过最大化观测标签的边际似然函数来估计参数</strong>。我们的框架实现了比竞争基线更高的精度，学习到的参数可以解释为连接顶点之间的相关性强度。此外，我们开发了低方差、无偏模型参数估计的线性时间算法，允许我们扩展到大型网络。我们还提供了我们方法的一个基本版本，该版本对相关结构做了更强的假设，但实现起来很轻松，通常以最小的开销获得很大的实际性能。</p>
+
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2021/09/08/Residual-Correlation-in-Graph-Neural-Network-Regression/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://zlpxiaokeai.gitee.io/2021/09/06/IDEA%E4%B8%AD%E5%BF%AB%E9%80%9F%E6%B7%BB%E5%8A%A0main%E3%80%81System%E6%96%B9%E6%B3%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1696,7 +1887,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1769,7 +1960,7 @@
     
       <span class="post-meta-item-text">博客总字数&#58;</span>
     
-    <span title="博客总字数">52.5k</span>字
+    <span title="博客总字数">62.6k</span>字
   
 </div>
 
